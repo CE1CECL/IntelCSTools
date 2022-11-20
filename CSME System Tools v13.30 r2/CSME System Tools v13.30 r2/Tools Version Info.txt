@@ -1,0 +1,13 @@
+Flash Image Tool (WIN32): 13.30.0.1065
+Flash Programming Tool (WIN32): 13.30.0.1065
+Flash Programming Tool (WIN64): 13.30.0.1065
+FWUpdate (EFI64): 13.30.0.1065
+FWUpdate (WIN32): 13.30.0.1065
+FWUpdate (WIN64): 13.30.17.1405
+MEInfo (EFI64): 13.30.0.1065
+MEInfo (WIN32): 13.30.0.1065
+MEInfo (WIN64): 13.30.17.1405
+MEManuf (EFI64): 13.30.0.1065
+MEManuf (WIN32): 13.30.0.1065
+MEManuf (WIN64): 13.30.0.1065
+Manifest Extension Utility (WIN32): 13.30.0.1065

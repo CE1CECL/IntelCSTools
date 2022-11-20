@@ -1,0 +1,9 @@
+Flash Image Tool: 6.0.50.1260 ***
+Flash Programming Tool(DOS): 6.0.50.1252
+Flash Programming Tool(Windows): 6.0.50.1252
+MEInfo(DOS): 6.0.50.1252
+MEInfo(Windows): 6.0.50.1252
+MEManuf(DOS): 6.0.50.1252
+MEManuf(Windows): 6.0.50.1252
+
+*** Before you use FITC, read the WARNING document first

@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 	The tooltip will show only first two lines of text.
+	The helpprovider ('?' button) will show all text
+	Leading and trailing white-spaces are ignored in every line -->
+<WizardHelp>
+
+	<General>
+		<WizardVersion>
+         6.0.50.1252
+      </WizardVersion>
+		<HelpTextHeader>
+
+		</HelpTextHeader>
+		<ExitMessage>
+			You are about to leave the configuration wizard.
+			If you proceed you will lose all your data.
+
+			Do you still want to exit?
+		</ExitMessage>
+		<ConfigurationReloadWarning>
+			You are about to return to the load configuration screen.
+			If you proceed back you will lose all your data.
+			
+			Do you still want to go back?
+		</ConfigurationReloadWarning>
+		<HelpTextFooter>
+
+
+
+
+______________________________________________________
+Help Button  Pops up this dialog
+Back Button: Navigates one screen back
+Next Button: Goes to the next screen.  If unable to proceed, then look for the red exclamation point and correct the issue.
+
+Exit Button: Exits the Intel Flash Image Wizard
+_______________________________________________________         		
+		</HelpTextFooter>
+	</General>
+	
+	<Welcome>
+		<HelpText>
+		  Welcome to Intel Flash Image Configuration Wizard.
+		  --------------------------------------------------
+			Use WizardDefault.conf to load Intel Desktop CRB Defaults.
+			Use the browse button to select a pre-existing configuration file.
+			
+			
+			
+			
+			
+			
+			
+		</HelpText>
+		<Browse>
+			Loads wizard values for building a new file.
+			Click next if this is first time running Wizard.
+			</Browse>
+	</Welcome>
+	
+	<FlashConfiguration>
+		<HelpText>
+		Serial Flash Configuration
+		--------------------------
+    This screen defines the properties for the Serial flash for the target platform.
+    
+    Number of Flash components:   Defines the number of flash components connected directly to the PCH's SPI bus.
+    Valid values are 0 and 1.  Target Platform HW designer can determine this value
+                                  
+    Flash Component 1 density:	Size of the Serial Flash devic    on the PCH's serial flash bus on chip select 0.
+    (SPI_CS0#)  Target Platform HW designer can determine this value
+    
+    Flash Component 2 density:	Size of the Serial Flash device on the PCH's serial flash bus on chip select 1.
+    (SPI_CS1#)  Target Platform HW designer can determine this value
+
+    Flash Parts Frequency:  Sets the frequency of SPI commands for Fast read, erase, write commands. 
+    Reads only operate at 20 MHz.   See PCH SPI programming guide for details on SPI flash 
+    requirements for 50 MHz before selecting. Target Platform HW designer can determine this value	 	 																	    	 	 																	
+		
+		
+		</HelpText>
+			<NumberOfFlashComponents>
+			Defines the number of flash components on the system hooked up directly to the PCH's SPI bus.
+		</NumberOfFlashComponents>
+		<FlashComponent1density>
+			Size of the Serial Flash device that is connected to the PCH's serial flash bus on chip select 0.  (SPI_CS0#)
+		</FlashComponent1density>
+		<FlashComponent2density>
+			Size of the Serial Flash device that is connected to the PCH's serial flash bus on chip select 1.  (SPI_CS1#)
+		</FlashComponent2density>
+		<FlashPartsClockFrequency>
+			Sets the frequency of SPI commands.  
+		</FlashPartsClockFrequency>
+		<TotalFlashComponentSize>
+			Show the total flash space that is available on the PCH's Serial flash bus.
+		</TotalFlashComponentSize>
+	</FlashConfiguration>
+	
+	<ImageSourceFiles>
+		<HelpText>
+					Image Source Configuration
+		--------------------------
+		
+		This screen points to the binaries and defines the regions that will be created in the final SPI binary.
+		
+		Intel(r) ME firmware update generation only:  This generates the ME region only.  This is necessary for Intel ME Ignition FW Update.		           												
+		
+		BIOS Image:   This option enables option of choosing a BIOS image.  Only select this option if BIOS is on the SPI flash
+		 							 that connects directly to the PCH.  
+		
+
+		Automatic Size Calculation:  Default.  It is recommended to leave this value as it.  This option works the same for all binaries.  The Flash Image Configuration wizard automatically determines
+		                   the size of each region.  It will also automatically adjust the size of each region in order to make sure all SPI flash space is denied.
+		Manual Region Size:   Advanced setting.  This option defines the size of the respective region. 
+		                   
+		
+		Total Image size is the sum of all the binaries that are being combined into the final SPI image.  If Manual pad is not checked,
+		then the Flash Image Configuration Wizard will automatically add size to each region to make a binary the same size as the Total flash component size
+		
+		Total Flash Component size:  Defines how much flash space that is available based on the input from the Serial Flash Configuration Screen
+
+--------------------------------									 
+		</HelpText>
+		<FirmwareUpdateOnly>
+This generates the ME region only.  This is necessary for Intel(r) ME Ignition FW Update.			
+			</FirmwareUpdateOnly>
+		<FirmwareImageBrowse>
+			Loads the Intel(r) Managment Engine firmware binary. 
+		</FirmwareImageBrowse>
+		<ManualPadSzie>
+			Defines how much space that should be allocated to the ME region of flash.
+		</ManualPadSzie>
+		<BIOSImageEnable>
+			Only set this if BIOS is on the SPI flash that connects directly to PCH's SPI flash bus.  
+			Target Platform BIOS engineer will know if this should be set.
+		</BIOSImageEnable>
+		<BIOSImageBrowse>
+			Loads the BIOS binary.
+		</BIOSImageBrowse>
+		<BIOSManualPadSize>
+			Defines how much additional space that should be allocated to the BIOS region of flash.
+		</BIOSManualPadSize>	
+		<GotoBuildButton>
+			Jumps straight to Building the image.  This is a shortcut if all settings in the wizard are to remain the same 
+			and the image source binaries are changing.
+			
+		</GotoBuildButton>
+	</ImageSourceFiles>
+	
+	<VSCCTable>
+		<HelpText>
+		  Intel (r) ME VSCC Table Configuration
+			----------------------------------------
+			
+			Intel ME VSCC Table Entries are necessary to ensure that the Intel Management Engine can correctly 
+			Write and Erase SPI flash.  Every flash part that is anticipated to be used on the platform should
+			have an entry in this table.
+			
+			
+			See PCH SPI programming guide for more information on how to determine
+			the correct VSCC value for the respective flash part.
+			
+			
+			Edit Table Entry:  This button allows you to edit the respective Intel ME VSCC Entry 
+			Add Table Entry: This button allows you to add the respective Intel ME VSCC Entry
+			Remove Entry: This button allows you to remove the respective Intel ME VSCC Entry
+			
+			
+
+    </HelpText>
+		<AddVsccEntry>
+			This button adds a flash part entry into the VSCC table.  
+		</AddVsccEntry>
+		<EditVSCCEntry>
+			This button adds a flash part entry into the VSCC table.  
+		</EditVSCCEntry>
+		<RemoveVSCCEntry>
+			This button adds a flash part entry into the VSCC table.  
+		</RemoveVSCCEntry>
+	</VSCCTable>
+
+	<VSCCEntry>
+	 <HelpText>
+		  Intel (r) ME VSCC Entry
+			----------------------------------------
+			
+			Intel ME VSCC Table Entries are necessary to ensure that the Intel Management Engine can correctly 
+			Write and Erase SPI flash.  Every flash part that is anticipated to be used on the platform should
+			have an entry in this table.
+			
+			See PCH SPI programming guide for more information on how to determine
+			the correct VSCC value for the respective flash part.
+			
+      Flash Entry Name: It is recommended to use the flash part name as the entry name.  
+      
+      Vendor ID:   This is the 1st byte of the JEDEC ID.  This will be found in the target flash vendor's data sheet.
+			See PCH SPI programming guide for more details on how to obtain this value.
+      
+      Device ID 0: This is the 2nd byte of the JEDEC ID. This will be found in the target flash vendor's data sheet.
+			See PCH SPI programming guide for more details on how to obtain this value.
+		  
+		  Device ID 1: This is the 2nd byte of the JEDEC ID. This will be found in the target flash vendor's data sheet.
+			See PCH SPI programming guide for more details on how to obtain this value.
+		  
+		  ME VSCC Value: This is the VSCC value that is used for the flash part.  
+		  Please refer to PCH SPI programming guide for recommendations on how to obtain this value.
+	</HelpText>
+	
+
+		<MeVsccDevice>
+			This field is used to easily identify the flash part when using Flash Image Configuration Wizard or FITC.
+			It is recommended to use the flash part name as the entry name.  
+		</MeVsccDevice>
+		<VendorId>
+			This is the 1st byte of the JEDEC ID.  This will be found in the target flash vendor's data sheet.
+			See PCH SPI programming guide for more details on how to obtain this value.
+		</VendorId>
+		<DeviceId0>
+			This is the 2nd byte of the JEDEC ID. This will be found in the target flash vendor's data sheet.
+			See PCH SPI programming guide for more details on how to obtain this value.
+		</DeviceId0>
+		<DeviceId1>
+			This is the 2nd byte of the JEDEC ID. This will be found in the target flash vendor's data sheet.
+			See PCH SPI programming guide for more details on how to obtain this value.
+		</DeviceId1>
+		<MeVsccValue>
+			This is the VSCC value that is used for the flash part.  Please refer to PCH SPI programming guide
+			for recommendations on how to obtain this value.
+		</MeVsccValue>
+	</VSCCEntry>
+	
+	
+	<DMI_PCIeConfiguration>
+		<HelpText>
+		  DMI/PCIe* Configuration
+			-----------------------
+			DMI Lane reversal:  This field should only be set if the layout requires the lanes to be reversed.
+			
+			PCIe* Lanes 1-4 Configuration:  This field must be set to configure the PCIe Ports 1-4 to meet target Platform requirements.
+			
+			
+		</HelpText>
+		<LanesReversed>
+			Set this field if target platform requires DMI and FDI lane reversal.
+			Target Platform Hardware designer will determine how if this field needs to be set.
+		</LanesReversed>
+		<Lanes14Configuration>
+			Determines the PCIe configuration for PCIe* ports 1-4.
+			Target Platform Hardware designer will determine how this field needs to be set.
+		</Lanes14Configuration>
+	</DMI_PCIeConfiguration>
+	
+	<ThermalReporting>
+		<HelpText>
+			Thermal Reporting Configuration
+			-------------------------------
+			Thermal reporting is necessary for all mobile platforms.  It is also necessary for any platform that requires PCH, Processor and 
+			DIMM thermal data to be provided to an external controller on the SMLink1 interface.  
+			
+			3rd Party Thermal Reporting Data Gathering Device is connected to SMLink1:	
+			Requires two addresses, I2C* address and GP Address.  These addresses must be compliant to what is necessary for the external controller.
+			
+			I2C* address is for Writes to the PCH from the external controller.
+			GP address is for Block Reads from the PCH to the external controller.
+			
+			
+		</HelpText>
+		<I2CTargetAddr>
+			Target Platform Hardware designer and BIOS developer will determine the I2C Target Address.
+			Ensure 3rd Party device is capable of using the I2C Target Address specified here.
+		</I2CTargetAddr>
+		<GPAddr>
+			Target Platform Hardware designer and BIOS developer will determine the I2C Target Address
+			Ensure 3rd Party device is capable of using the GP Target Address specified here.
+
+		</GPAddr>
+		<MDimmTSCheckbox>
+			DIMM TS Access Port configuration is used by ME FW to determine how to access DIMM Thermal
+			Sensors. - Selected = PECI(Default) ; Not Selected = SMBus
+		</MDimmTSCheckbox>
+	</ThermalReporting>
+
+   <Bootconfiguration>
+      <HelpText>
+         Boot Configuration Options
+         --------------------------
+
+         BIOS Boot Block size is determined by Target platform BIOS architecture.  If BIOS is not on SPI attached directly to the PCH,
+         then this value must be set to 64 KB.  If BIOS Image is not provided, then this box will be greyed out.
+
+         T209:  This setting is only necessary if target design requires more than 100 ms at the minimum time between PWROK active and
+         PROCPWRGD active.
+
+         T1001:  This setting provides the flexibility to change the timing between the assertion of CPUPWRGD to the de-assertion of SUS_STAT#.
+         The timing can be varied from 30 us to 5ms. The default setting of 1ms should be changed only if necessary.
+
+         ME Reset Capture:  When enabled, Intel Management Engine (ME) will assert CL_RST# when ME FW resets. The signal can be used to
+         monitor ME FW state.
+
+         Multiple processors:  This is only necessary if there are multiple processors are attached to the platform.
+
+         SYS_PWROK Assertion Synchronization Point:  Select Haswell/Broadwell or Sandy/Ivy Bridge.
+
+
+      </HelpText>
+      <BIOSBootBlockSize>
+         Default is 64 KB.  BIOS included in Intel(r) ME firmware KIT use 64 KB.
+         Target BIOS developer will determine this value.
+      </BIOSBootBlockSize>
+      <T209>
+         This is an advanced setting.  Leave at default 1ms unless the target platform requires more time between PWROK and PROCPWRGD.
+         Target Platform Hardware designer will determine if this field needs to be changed.
+      </T209>
+      <T1001>
+         This setting provides the flexibility to change the timing between the assertion of CPUPWRGD to the de-assertion of SUS_STAT#.
+         The timing can be varied from 30 us to 5ms. The default setting of 2ms should be changed only if necessary.
+      </T1001>
+      <MEResetCapture>
+         When enabled, Intel Management Engine (ME) will assert CL_RST# when ME FW resets.
+         The signal can be used to monitor ME FW state.
+      </MEResetCapture>
+      <MultipleProcessors>
+         This field is only applicable if there are multiple processors attached to the platform.
+         Target Platform Hardware designer will determine if this field needs to be set.
+      </MultipleProcessors>
+      <SysPwrokSyncPoint>
+         Select the CPU target for the correct power sequence.  Either Haswell/Broadwell or Sandy/Ivy Bridge CPU.
+      </SysPwrokSyncPoint>
+	</Bootconfiguration>
+	
+	<Production>
+		<HelpText>
+			Production/Non-Production Configuration
+			---------------------------------------
+			
+			Production Mode is necessary when the image is going into a manufacturing environment.  It has the recommended 
+			Flash protection for shipping platforms and has disabled debug devices MDDD - ME Memory-attached Debug Display Device 
+			and MEDSC- ME SMBus Diagnostic Console.
+			
+			Non-Production Mode is recommended for development and testing phases.  MDDD and MESDC are enabled and BIOS/Host programs	are able to overwrite the ME region and Descriptor.
+			
+			
+		</HelpText>
+		<ProductionMode>
+			This mode needs to be set for manufacturing line.  It uses the Intel recommended read/write permissions are necessary to secure
+			Intel® Management Engine and Intel® ME Firmware. 
+			
+		</ProductionMode>
+		<NonProductionMode>
+			This mode is used for development and debug environments.  There is no descriptor based flash protection.  This also enables debug features
+			MDDD as well as Intel ME SMBus Debug Console (MESDC) to be used for	ME debug.
+		</NonProductionMode>
+	</Production>
+	
+	<Braidwood>
+		<HelpText>
+			Braidwood Technology Configuration
+			----------------------------------
+			
+			Braidwood technology has an enable/disable and has three configuration options.
+			1. Braidwood SSD (solid state drive) is enabled and Braidwood NVMHCI (caching) is enabled
+			2. Braidwood SSD (solid state drive) is enabled and Braidwood NVMHCI (caching) is disabled
+			3. Braidwood SSD (solid state drive) is disabled and Braidwood NVMHCI (caching) is enabled
+		</HelpText>
+	</Braidwood>
+
+	<ICC>
+		<HelpText>
+		Integrated Clocking Configuration
+		---------------------------------
+		
+		Number of Supported SKUs:  It is recommended to keep this value at 1.  Only increase this value
+		if it is necessary to have more than 1 clock record.  More than 1 clock record would be necessary if single ME FW binary is to be used for multiple designs.
+		
+		Platform will use this record at boot: This sets softstraps to determine which clock record will be loaded by Intel ME FW.
+		
+		Edit: Starts dialog boxes to configure a the respective clock record.
+		
+		Status:  Lets the user know if the clock settings have been changed from the configuration file (.conf) file.
+			
+		</HelpText>
+		<SelectRecord>
+			This field determines which record will be used in the target platform.  This sets softstraps to select which record is used
+			The Platform hardware designer will have to determine which field is the correct record for the target platform.
+		</SelectRecord>
+		<Status>
+			This field notifies if the clock settings have been changed from the configuration file (.conf) file.
+		</Status>
+	</ICC>
+	
+	<SingleEndedClocks>	
+		<HelpText>
+			FLEX[3:0] clock Enable:  Check box to enable respective Flex clock.
+			FLEX[3:0] Frequency: Changes the respective Flex Clock Frequency
+			FLEX[3:0] Slew Rate:  Changes the respective Flex clock.
+			FLEX[3:0] Frequency: Changes the respective Flex Clock Frequency
+			FLEX[3:0] Single vs. Double loaded: Changes the series resitor for Flex Clock loading.  17 ohms for Double loaded, 25 for Single loaded
+			FLEX[3:0] Affected by PCI CLKRUN: Only selectable when respecitve flex clock is set to 33 MHz.  When selected, the respective clock will stop when CLKRUN is asserted.
+			
+			PCI[4:0] Clock Enable: Check box to enable respective PCI clock
+			PCI[4:0] Slew Rate:  Changes the respective Flex clock.
+			PCI[4:0] Single vs. Double loaded: Changes the series resitor for PCI loading.  17 ohms for Double loaded, 25 for Single loaded
+			PCI[4:0] Affected by PCI CLKRUN: Only selectable when respecitve flex clock is set to 33 MHz.  When selected, the respective clock will stop when CLKRUN is asserted.
+			
+			ICC Parameters:  Shows what values will be used in clock behavior.  Register definitions are shown in FW Bring Up Guide ME FW Clock Parameters.
+			
+		</HelpText>
+		<FLEXClockEnable>
+			This field determines if the respective Flex Clock is enabled.
+			The Platform hardware designer will have to determine which field is the correct record for the target platform.
+		</FLEXClockEnable>
+		<PCIClockEnable>
+			This field determines if the respective PCI clock needs to be enabled.
+			The Platform hardware designer will have to determine which field is the correct record for the target platform.
+		</PCIClockEnable>
+		<Frequency>
+			This field determines the frequency of the respective flex clock.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</Frequency>
+		<SlewRate>
+			This field determines the slew of the respective flex clock. This may need to be adjusted to meet EMI requirments.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</SlewRate>
+		<FLEXSingleLoaded>
+			This field determines how the respective flex clock is loaded. 
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</FLEXSingleLoaded>
+		<FLEXDoubleLoaded>
+			This field determines how the respective flex clock is loaded. 
+			The Platform hardware designer will have to determine which field is the correct record for the target platform.
+		</FLEXDoubleLoaded>
+		<FLEXAffectedByPCI_CLKRUN>
+			This field determines if the respective flex clock is shut off by PCI_CLKRUN
+			The Platform hardware designer will have to determine which field is the correct record for the target platform.
+		</FLEXAffectedByPCI_CLKRUN>
+		<PCISingleLoaded>
+			This field determines how the respective PCI clock is loaded. 
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</PCISingleLoaded>
+		<PCIDoubleLoaded>
+			This field determines how the respective PCI clock is loaded. 
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</PCIDoubleLoaded>
+		<PCIAffectedByPCI_CLKRUN>
+			This field determines if the respective PCI clock is shut off by PCI_CLKRUN
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</PCIAffectedByPCI_CLKRUN>
+	</SingleEndedClocks>
+	
+	<DifferentialClocks>
+		<HelpText>
+			BCLK0: Clock enable:  Enables BCLK0 for processor
+			DMI: Clock enable: Enables 100 MHz DMI clock
+			DP120: Clock enable: Enables 120 MHz clock for Display Port
+                        DCI Ext/Intg/Mixed Graphics: DP120 is genrated by the PCH with 25Mhz external crystal
+                        External Graphics only: Disables the generation of DP120
+			PEGA: Clock enable: Enables the respective PCI Express* 2.0 jitter tolerant 100 MHz clock
+			PEGA: Clock Request Mapping:  Configures which GPIO will gate PEGA clock.  Default is to Disable clock gating.
+			PEGB: Clock enable: Enables the respective PCI Express* 2.0 jitter tolerant 100 MHz clock
+			PEGB: Clock Request Mapping:  Configures which GPIO will gate PEGB clock.  Default is to Disable clock gating.
+			CLKOUT_PCIE[7:0]P/N: Clock enable: Enables the respective PCI Express* Port 100 MHz clock
+			CLKOUT_PCIE[7:0]P/N: Clock Request Mapping:  Configures which GPIO will gate the respective PCIe* clock.  Default is to Disable clock gating.
+		</HelpText>
+		<BCLK0>
+		  Enables the 133 MHz BCLK0 for processor.
+		  The Platform hardware designer will have to determine the setting for the target platform.
+		</BCLK0>
+		<DMI>
+			Enables the 100 MHz DMI clock.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</DMI>
+		<DP120BCLK1>
+			Enables the 120 MHz Display Port clock.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</DP120BCLK1>
+		<PEGx>
+			Enables the respective PCI Express* 2.0 jitter tolerant 100 MHz clock for PEG ports.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</PEGx>
+		<SRCx>
+			Enables the respective PCI Express* port 100 MHz clock.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</SRCx>
+		<CLKRQMapping>
+			This field determines which clock is gated by the respective Clock Request signal.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</CLKRQMapping>
+		<RCR123033>
+			If the platform will only support external graphics then set this field to External Graphics.
+                        Else use DCI EXT/Intg/Mixed setting. The platform designer will have to determine the setting for target platform.
+		</RCR123033>
+	</DifferentialClocks>
+	
+	<MiscellaneousClocks>
+		<HelpText>
+			BCLKIN:This field determines if BCLKIN from clock chip needs to be enabled.
+			The Platform hardware designer will have to determine the setting for the target platform.
+			
+			DOT96:This field determines if DOT96 from clock chip needs to be enabled.
+			The Platform hardware designer will have to determine the setting for the target platform.
+
+			DIV1/DIV-NS/SSC1 Dynamic Shutdown Enable:	    Disable if visual waviness is seen using Intel integrated graphics device.
+			
+		</HelpText>
+		<BCLKIN>
+			This field determines if BCLKIN from clock chip needs to be enabled.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</BCLKIN>
+		<DOT96>
+			This field determines if DOT96 from clock chip needs to be enabled.
+			The Platform hardware designer will have to determine the setting for the target platform.
+		</DOT96>
+		<SSCEnabled>
+	    Disable if visual waviness is seen using Intel integrated graphics device.
+		</SSCEnabled>
+	</MiscellaneousClocks>
+	
+	<Braidwood>
+		<BraidwoodEnable>
+			Enable/Disables Intel(r) VE.  This will disable Braidwood technology.
+		</BraidwoodEnable>
+		<BraidwoodFunctionality>
+		  Selects what Intel Braidwood Technology options will be enabled. 
+		</BraidwoodFunctionality>
+	</Braidwood>
+	
+	<IntelMEConfParam>
+		<HelpText>
+		Intel ME Configuration Parameters Screen
+		----------------------------------------
+		
+		SKU Type:   This field will make "Full Featured" Engineering Samples behave like production SKU silicon.  It will not change a production part SKU.
+		Set the SKU of Intel(r) 5 Series chipset on which this image will be used.  If using a single image for multiple mobile SKUs, 
+		then use Intel(r) HM57 to enable/disable behavior for Braidwood Technology and PAVP 1.5. 
+		
+		Permanently Disable Intel(r) QST?: Set this to enable or disable Intel QST
+		Intel(r) QST Ship State: Set the enable/disable state of Intel QST.  This state can be changed via Intel(r) MEI message.
+		
+		Load a QST configuration File:  This is a configuration payload for Intel(r) QST.
+		
+		M3 rail present  This field should be set if ME well is powered in Sx states.  Intel Mobile and Desktop CRBs MUST have this field set to enable.  
+		Most platforms will not need to set this unless using the same platform for either vPRO (specifically Intel(R) AMT), or consumer platform that has Intel(r) Remote Wake Technology enabled.
+	  The platform hardware developer can determine if this needs to be set.
+	  
+	  FW Update OEM ID:  This field provides the ability to target FWUpdate (FWUpdLcl.exe) by Platform OEM. This ID will ensure
+    that customers can only update a platform with an image coming from the platform OEM. If this field set to an all zeros, then any valid FW Update image is valid when doing a firmware update.
+    
+		
+		</HelpText>
+		<PlatformType>
+			This field will make "Full Featured" Engineering Samples behave like production SKU silicon.  It will not change a production part SKU.
+		Set the SKU of Intel(r) 5 Series chipset on which this image will be used.
+		</PlatformType>
+		<QSTEnabled>
+			Enables/disable Intel QST.  Not available on Mobile Platforms.
+			The platform hardware developer will determine if this needs to be set.
+		</QSTEnabled>
+		<QSTLock>
+			Locks the state of Intel QST.  If Intel QST is enabled, and Intel QST Lock is set then BIOS will not be able to disable
+			Intel QST.  If Intel QST is disabled and Intel QST Lock is set, then BIOS will not be able to enable
+			Intel QST.
+		</QSTLock>
+		<QstConfigurationFileBrowse>
+			Configuration file for Intel QST.
+		</QstConfigurationFileBrowse>
+		<M3RailPresent>
+			Needs to be set if Intel ME well is on during Sx states.
+			Intel Desktop CRB and Mobile CRBs have M3 rails and must have this field checked. (Enabled)
+		</M3RailPresent>
+		<QSTPERMDISABLE>
+			Permandly Disables Intel(r) QST if checked.  Not available on Mobile Platforms.
+			The platform hardware developer will determine if this needs to be set.
+		</QSTPERMDISABLE>
+		<QSTSHIPSTATE>
+			Enables/Disable Intel(r) QST.  If not permanently disabled, then Intel(r) QST may be enable/disabled via Intle(r) MEI messages by BIOS.
+		</QSTSHIPSTATE>	
+		<PAVPPERMDISABLE>
+			Permanently disables PAVP 1.5 if checked.  This is not available on Intel(r) PM57 or Intel(r) P57.
+		</PAVPPERMDISABLE>
+		<FWUPDATEOEMID>
+			This field provides the ability to target FWUpdate (FWUpdLcl.exe) by Platform OEM. This ID will ensure    that customers can only update 
+			a platform with an image coming from the platform OEM. If this field set to an all zeros, then any valid FW Update image is valid when doing a firmware update.
+		</FWUPDATEOEMID>
+
+	</IntelMEConfParam>
+	
+	<SaveBuild>
+		<HelpText>
+		Save and Build
+		--------------
+		
+		Output path determines what directory the output image will be saved to.
+		
+		Output image name:  Determines the name for the binary, FITC .xml (softstraps), FITC .txt (ME variables and Clocks)
+		
+		Build:  Builds the final image specified by Output path and Image name
+		
+		Save wizard settings: Saves a configuration file for the wizard.  This file will be a .conf and can be loaded on the first screen of the wizard.
+		</HelpText>
+		<Browse>
+			Defines the Output Path where the resultant flash image will be saved.
+		</Browse>
+		<Build>
+			Builds the final serial flash image that will be built in the Output Path.
+		</Build>
+		<SaveWizardSettings>
+			Saves a configuration file for the wizard.  This file will be a .conf and can be loaded on the first screen of the wizard.
+		</SaveWizardSettings>
+		<ViewBuildLog>
+			Gives an output of the commandline of the FITC.exe.  This can be looked over to determine if the image failes to build.
+		</ViewBuildLog>
+	</SaveBuild>
+	
+</WizardHelp>

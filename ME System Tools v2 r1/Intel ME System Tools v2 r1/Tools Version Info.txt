@@ -1,0 +1,16 @@
+Flash Image Tool: 1.6.0.1
+Flash Programming Tool(DOS): 0.8.16
+Flash Programming Tool(Windows): 0.8.16
+Fixed Address Programming Tool(DOS): 2.5.5
+Fixed Address Programming Tool(Windows): 2.5.5
+FWUpdate(Local-DOS): 2.5.0.1025
+FWUpdate(Local-Win): 2.5.1.1034
+MEInfo(DOS): 2.5.0.1025
+MEInfo(Windows): 2.5.0.1025
+MEManuf(DOS): 2.5.0.1025
+MEManuf(Windows): 2.5.0.1025
+iAMTNVM(Windows): 2.6.0.1025 *
+iAMTNVM(Windows): 2.1.1.1030 **
+
+* For ICH8M mobile systems with ME v2.5 - v2.6
+** For ICH8 desktop systems with ME v2.0 - v2.2

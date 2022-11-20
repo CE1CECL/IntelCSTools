@@ -1,0 +1,12 @@
+Flash Image Tool (WIN32): 5.1.0.1167
+Flash Programming Tool (DOS): 5.1.0.1167
+Flash Programming Tool (WIN32): 5.1.0.1167
+Flexible SKU Update Tool (DOS): 5.0.0.1167
+FWUpdate (DOS): 5.2.50.1042
+FWUpdate (WIN32): 5.2.50.1042
+MEInfo (DOS): 5.0.0.1167
+MEInfo (WIN32): 5.0.0.1167
+MEManuf (DOS): 5.0.0.1167
+MEManuf (WIN32): 5.0.0.1167
+ITPMDiag (DOS): 5.0.0.1167
+ITPMDiag (WIN32): 5.0.0.1167

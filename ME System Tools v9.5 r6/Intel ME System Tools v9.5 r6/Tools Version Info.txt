@@ -1,0 +1,22 @@
+Flash Image Tool (WIN32): 9.5.15.1730
+Flash Programming Tool (DOS): 9.5.40.1868
+Flash Programming Tool (EFI64): 9.5.40.1868
+Flash Programming Tool (WIN32): 9.5.40.1868
+Flash Programming Tool (WIN64): 9.5.40.1868
+FWUpdate (DOS): 9.5.61.3012
+FWUpdate (EFI64): 9.5.61.3012
+FWUpdate (WIN32): 9.5.65.3000
+FWUpdate (WIN64): 9.5.65.3000
+MEInfo (DOS): 9.5.35.1850
+MEInfo (EFI64): 9.5.35.1850
+MEInfo (WIN32): 9.5.65.3000
+MEInfo (WIN64): 9.5.35.1850
+MEManuf (DOS): 9.5.14.1724
+MEManuf (EFI64): 9.5.14.1724
+MEManuf (WIN32): 9.5.14.1724
+MEManuf (WIN64): 9.5.14.1724
+UpdParam (DOS): 9.5.14.1724
+USBFile (WIN32): 8.0.0.1 (v4.0)
+Clock Commander Tool (DOS): 9.5.14.1724
+Clock Commander Tool (EFI64): 9.5.14.1724
+Clock Commander Tool (WIN32): 9.5.14.1724

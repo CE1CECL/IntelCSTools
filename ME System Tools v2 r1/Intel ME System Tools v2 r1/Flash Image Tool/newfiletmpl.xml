@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ftoolRoot version="14">
+    <ProgSettings>
+        <GenIntermediateFiles value="true"/>
+        <BuildOutputFilename value=""/>
+        <BuildCompactImage value="false"/>
+    </ProgSettings>
+    <Chipset>
+        <Region0 name="Descriptor Region">
+            <Enabled value="true" edit="false" visible="false" name="" help_text=""/>
+            <Signature value="0xFF0A55A" edit="false" visible="false" name="Signature" help_text="Must be 0x0ff0a55a."/>
+            <DescriptorMap name="Descriptor Map">
+                <NumComponents value="1" edit="true" visible="true" name="Number of Flash Components" help_text="Specifies the number of Flash components that will be installed on the target machine. Valid values are 0,1,2 - 0 causes only ME region to be built."/>
+                <ComponentBaseAddr value="0x00000001" edit="false" visible="true" name="Component Base Address" help_text="Identifies address bits [11:4] for the Component portion of the Flash Descriptor."/>
+                <RegionBaseAddr value="0x00000004" edit="false" visible="true" name="Region base address" help_text="Identifies address bits [11:4] for the Region portion of the Flash Descriptor."/>
+                <NumMasters value="2" edit="false" visible="true" name="Number of Masters" help_text=""/>
+                <MasterBaseAddr value="0x00000006" edit="false" visible="true" name="Master base address" help_text="Identifies address bits [11:4] for the Master portion of the Flash Descriptor."/>
+                <IchStrapLength value="1" edit="false" visible="true" name="Number of ICH straps" help_text="The number of ICH straps to be read. Valid values are 0 to 255."/>
+                <IchBaseAddr value="0x00000010" edit="false" visible="true" name="ICH straps base address" help_text="Identifies address bits [11:4] for the ICH strap portion of the Flash Descriptor."/>
+                <MchStrapLength value="1" edit="false" visible="true" name="Number of MCH straps" help_text="The number of MCH straps to be read. Valid values are 0 to 255."/>
+                <MchBaseAddr value="0x00000020" edit="false" visible="true" name="MCH straps base address" help_text="Identifies address bits [11:4] for the MCH strap portion of the Flash Descriptor."/>
+            </DescriptorMap>
+            <Component name="Component Section">
+                <ReadStatusFreq value="20MHz" value_list="20MHz,,33MHz,,66MHz" edit="true" visible="true" name="Read ID and Read Status clock frequency" help_text="If more that one Flash component exists, this field must be the lowest common frequency of the different components."/>
+                <WriteEraseFreq value="20MHz" value_list="20MHz,,33MHz,,66MHz" edit="true" visible="true" name="Write and erase clock frequency" help_text="If more that one Flash component exists, this field must be the lowest common frequency of the different components."/>
+                <FastReadFreq value="20MHz" value_list="20MHz,,33MHz,,66MHz" edit="true" visible="true" name="Fast read clock frequency" help_text="This field is undefined if the Fast Read Support is set to false."/>
+                <FastReadSupport value="false" edit="true" visible="true" name="Fast read support" help_text='Enables/disables &quot;Fast Read&quot; support.'/>
+                <ReadFreq value="20MHz" value_list="20MHz" edit="true" visible="true" name="Read clock frequency" help_text="Sets the Flash read frequency"/>
+                <DensityComp1 value="512KB" value_list="512KB,,1MB,,2MB,,4MB,,8MB,,16MB" edit="true" visible="true" name="Flash component 1 density" help_text="This field identifies the size of the 1st Flash component."/>
+                <DensityComp2 value="512KB" value_list="512KB,,1MB,,2MB,,4MB,,8MB,,16MB" edit="false" visible="true" name="Flash component 2 density" help_text="This field identifies the size of the 2nd Flash component."/>
+                <IllegalInst0 value="0" edit="true" visible="true" name="Illegal Instruction 0" help_text="Op-code for an illegal instruction that the Flash Controller should protect against. This byte should be set to 0 if there is no instruction to protect against."/>
+                <IllegalInst1 value="0" edit="true" visible="true" name="Illegal Instruction 1" help_text="Op-code for an illegal instruction that the Flash Controller should protect against. This byte should be set to 0 if there is no instruction to protect against."/>
+                <IllegalInst2 value="0" edit="true" visible="true" name="Illegal Instruction 2" help_text="Op-code for an illegal instruction that the Flash Controller should protect against. This byte should be set to 0 if there is no instruction to protect against."/>
+                <IllegalInst3 value="0" edit="true" visible="true" name="Illegal Instruction 3" help_text="Op-code for an illegal instruction that the Flash Controller should protect against. This byte should be set to 0 if there is no instruction to protect against."/>
+            </Component>
+            <MasterSection name="Master Access Section">
+                <Master name="CPU/BIOS">
+                    <PciBus value="0" edit="true" visible="true" name="PCI Bus ID" help_text=""/>
+                    <PciDevice value="0" edit="true" visible="true" name="PCI Device ID" help_text=""/>
+                    <PciFunction value="0" edit="true" visible="true" name="PCI Function ID" help_text=""/>
+                    <ReadAccess value="0x00" edit="true" visible="true" name="Read access" help_text="Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted."/>
+                    <WriteAccess value="0x00" edit="true" visible="true" name="Write access" help_text="Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted."/>
+                </Master>
+                <Master name="Manageability Engine (ME)">
+                    <PciBus value="0" edit="true" visible="true" name="PCI Bus ID" help_text=""/>
+                    <PciDevice value="0" edit="true" visible="true" name="PCI Device ID" help_text=""/>
+                    <PciFunction value="0" edit="true" visible="true" name="PCI Function ID" help_text=""/>
+                    <ReadAccess value="0x00" edit="true" visible="true" name="Read access" help_text="Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted."/>
+                    <WriteAccess value="0x00" edit="true" visible="true" name="Write access" help_text="Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted."/>
+                </Master>
+                <Master name="GbE LAN">
+                    <PciBus value="2" edit="true" visible="true" name="PCI Bus ID" help_text=""/>
+                    <PciDevice value="3" edit="true" visible="true" name="PCI Device ID" help_text=""/>
+                    <PciFunction value="0" edit="true" visible="true" name="PCI Function ID" help_text=""/>
+                    <ReadAccess value="0x00" edit="true" visible="true" name="Read access" help_text="Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted."/>
+                    <WriteAccess value="0x00" edit="true" visible="true" name="Write access" help_text="Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted."/>
+                </Master>
+            </MasterSection>
+            <IchStrap0 name="ICH Strap 0">
+                <DmiReqIdDisable value="false" edit="true" visible="true" name="DMI requestor ID security check disable" help_text="The primary purpose of this strap is to support server environments with multiple CPUs that each have a different RequesterID that can access the Flash."/>
+                <IntegratedGbeOrPcieSel value="Integrated GbE" value_list="PCI Express,,Integrated GbE" edit="true" visible="true" name="Integrated GbE or PCI Express select" help_text="Defines what PCIe Port 6 is used for."/>
+                <BmcMode value="false" edit="true" visible="true" name="BMC mode" help_text="If true, device is in BMC mode. Else, AMT or ASF."/>
+                <MeSmBusAddr value="0x64" edit="true" visible="true" name="SmBus address (7-bit)" help_text="The ME SmBus 7-bit address."/>
+                <MeSmBus2Addr value="0x00" edit="true" visible="true" name="SmBus 2 address (7-bit)" help_text="The ME SmBus 2 7-bit address."/>
+                <MeSmBus2Sel value="0 (SmBus pins)" value_list="0 (SmBus pins),,1 (SmLink pins)" edit="true" visible="true" name="SmBus 2 Select" help_text="Specifies whether the ME SmBus Controller 2 is connected to the SmBus pins or the SmLink pins."/>
+                <TcoMode value="Legacy" value_list="Legacy,,TCO Mode" edit="true" visible="true" name="TCO Mode" help_text="The TCO Mode, along with the BMCMODE strap, determines the behavior of the IAMT SmBus controller."/>
+                <MeDisable value="false" edit="true" visible="true" name="ME disable" help_text="Disables/enables the ME."/>
+                <LanPhyPcGp12Sel value="0 (General purpose IO)" value_list="0 (General purpose IO),,1 (Native mode)" edit="true" visible="true" name="LANPHYPC_GP12_SEL" help_text="Set to 0 for GP12 to be used as GPIO (General Purpose Input/Output), or 1 for GP12 to be used for native mode as LAN_PHYPC for 82566 LCD device"/>
+                <LanPhyPcGbeDockSel value="0 (LCD Power Control(LAN_PHYPC))" value_list="0 (LCD Power Control(LAN_PHYPC)),,1 (GBEDOCK#)" edit="true" visible="true" name="LANPHYPC_GBEDOCK_SEL" help_text="Set to 0 for GP12 to be used as LAN_PHYPC, or 1 for GP12 to be used as GBEDOCK Docking State Indication"/>
+                <SpiCs1 value="0 (GPIO13 is General Puspose Input)" value_list="0 (GPIO13 is General Puspose Input),,1 (GPIO13 is used in ntive mode as ENERGY_DETECT)" edit="true" visible="true" name="Energy_Detect GPIO13" help_text="0 = GPIO13 is General Puspose Input.  1 = GPIO13 is used in ntive mode as ENERGY_DETECT"/>
+            </IchStrap0>
+            <MchStrap0 name="MCH Strap 0">
+                <MeBootFlash value="false" edit="true" visible="true" name="ME boot from Flash" help_text="If true, ME will boot directly from Flash."/>
+                <MeDisable value="false" edit="true" visible="true" name="ME disable" help_text="If true, ME is disabled."/>
+            </MchStrap0>
+            <VsccTable name="VSCC Table">
+            </VsccTable>
+            <OemSection name="OEM Section">
+                <InputFile value="" edit="true" visible="true" name="Binary input file" help_text="The contents of this file (up to 256 bytes) are copied directly into the OEM section of the Flash Descriptor."/>
+            </OemSection>
+        </Region0>
+        <Region1 name="BIOS Region">
+            <Enabled value="true" edit="false" visible="false" name="" help_text=""/>
+            <RegionLength value="0x00000000" edit="true" visible="true" name="BIOS region length" help_text="This is the size of the BIOS region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF."/>
+            <InputFile value="" edit="true" visible="true" name="Binary input file" help_text="This is the BIOS image binary that will be copied into this region."/>
+        </Region1>
+        <Region2 name="ME Region">
+            <Enabled value="true" edit="false" visible="false" name="" help_text=""/>
+            <RegionLength value="0x00000000" edit="true" visible="true" name="ME region length" help_text="This is the size of the ME region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF."/>
+            <SourcedFromFile value="true" edit="false" visible="false" name="Sourced from file" help_text=""/>
+            <InputFile value="" edit="true" visible="true" name="Binary file" help_text="This is the path to a binary file that will be used for the partitions contents."/>
+            <UmaSize value="16MB" value_list="1MB,,2MB,,4MB,,8MB,,16MB" edit="false" visible="false" name="UMA size" help_text="This is the amount of the UMA memory (in MB) that ME will request from BIOS."/>
+            <TicksToAdd value="0xFFFF" edit="false" visible="false" name="Ticks to add" help_text="This is used for access management."/>
+            <TokensToAdd value="0xFFFF" edit="false" visible="false" name="Tokens to add" help_text="This is used for access management."/>
+            <SigningKey value="" edit="false" visible="false" name="Signing key file" help_text="This is the path to a key file that is used for signing partition manifests."/>
+            <BypassInputFile value="" edit="false" visible="true" name="ROM bypass file" help_text="This specifies the file that will be copied into the first 32k of the Flash image."/>
+            <AfscConfigurationFile value="" edit="false" visible="false" name="Fan speed config file" help_text="This is the Advanced Fan Speed Control (AFSC) configuration binary file."/>
+        </Region2>
+        <Region3 name="GbE Region">
+            <Enabled value="true" edit="false" visible="false" name="" help_text=""/>
+            <RegionLength value="0x00000000" edit="true" visible="true" name="GbE LAN region length" help_text="This is the size of the GbE LAN region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF."/>
+            <InputFile value="" edit="true" visible="true" name="Binary input file" help_text="This is the Gbe image binary that will be copied into this region."/>
+            <MacAddress value="00 00 00 00 00 00" edit="true" visible="true" name="MAC address" help_text="This is the 48-bit Ethernet MAC."/>
+            <MajorVersion value="0" edit="false" visible="true" name="Major Version" help_text=""/>
+            <MinorVersion value="0" edit="false" visible="true" name="Minor Version" help_text=""/>
+            <ImageId value="0" edit="false" visible="true" name="Image ID" help_text=""/>
+        </Region3>
+    </Chipset>
+</ftoolRoot>

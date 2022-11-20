@@ -1,0 +1,16 @@
+Flash Image Tool (WIN32): 4.0.26.1337
+Flash Image Tool (LINUX64): 4.0.26.1337
+Flash Programming Tool (EFI32): 4.0.26.1337
+Flash Programming Tool (EFI64): 4.0.26.1337
+Flash Programming Tool (WIN32): 4.0.26.1337
+Flash Programming Tool (WIN64): 4.0.26.1337
+TXEInfo (EFI32): 4.0.26.1337
+TXEInfo (EFI64): 4.0.26.1337
+TXEInfo (WIN32): 4.0.26.1337
+TXEInfo (WIN64): 4.0.26.1337
+TXEManuf (EFI32): 4.0.26.1337
+TXEManuf (EFI64): 4.0.26.1337
+TXEManuf (WIN32): 4.0.26.1337
+TXEManuf (WIN64): 4.0.26.1337
+Manifest Extension Utility (WIN32): 4.0.26.1337
+Manifest Extension Utility (LINUX64): 4.0.26.1337

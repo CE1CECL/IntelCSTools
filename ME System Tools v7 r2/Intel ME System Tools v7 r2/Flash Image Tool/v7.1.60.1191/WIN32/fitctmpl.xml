@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<FToolTemplate>
+	<Master name="Master default">
+    	<PciBus value="0" edit="true" visible="true" name="PCI Bus ID" help_text=""/>
+    	<PciDevice value="0" edit="true" visible="true" name="PCI Device ID" help_text=""/>
+    	<PciFunction value="0" edit="true" visible="true" name="PCI Function ID" help_text=""/>
+    	<ReadAccess value="0x00000000" edit="true" visible="true" name="Read access" help_text="Each bit [23:16] corresponds to Regions [7:0]. If the bit is set, read access is granted."/>
+    	<WriteAccess value="0x00000000" edit="true" visible="true" name="Write access" help_text="Each bit [23:16] corresponds to Regions [7:0]. If the bit is set, write access is granted."/>
+    </Master>
+    
+    <MeVsccDevice name="Flash device">
+    	<VendorId value="0" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+    	<DeviceId0 value="0" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+    	<DeviceId1 value="0" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+    	<MeVsccValue value="0" edit="true" visible="true" name="VSCC register value" help_text="This entry will only add SPI flash support for Intel® Management Engine FW. Contact your BIOS vendor to ensure Host VSCC will be set for this part."/>
+    </MeVsccDevice>
+</FToolTemplate>

@@ -1,0 +1,20 @@
+Modular Flash Image Tool (WIN32): 16.0.15.1735
+Modular Flash Image Tool (LINUX64): 16.0.15.1735
+Flash Programming Tool (EFI64): 16.0.15.1683
+Flash Programming Tool (WIN32): 16.0.15.1735
+Flash Programming Tool (WIN64): 16.0.15.1683
+Flash Programming Tool (LINUX64): 16.0.15.1735
+FWUpdate (EFI64): 16.0.15.1735
+FWUpdate (WIN32): 16.0.15.1817
+FWUpdate (WIN64): 16.0.15.1829
+FWUpdate (LINUX64): 16.0.15.1735
+MEInfo (EFI64): 16.0.15.1735
+MEInfo (WIN32): 16.0.15.1735
+MEInfo (WIN64): 16.0.15.1829
+MEInfo (LINUX64): 16.0.15.1735
+MEManuf (EFI64): 16.0.15.1735
+MEManuf (WIN32): 16.0.15.1735
+MEManuf (WIN64): 16.0.15.1735
+MEManuf (LINUX64): 16.0.15.1735
+Manifest Extension Utility (WIN32): 16.0.15.1735
+Manifest Extension Utility (LINUX64): 16.0.15.1735

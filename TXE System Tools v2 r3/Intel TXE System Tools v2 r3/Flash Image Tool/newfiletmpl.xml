@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ftoolRoot version="8.16">
+	<ProgSettings>
+		<GenIntermediateFiles value="true"/>
+		<BuildOutputFilename value="$DestDir\outimage.bin"/>
+		<BuildCompactImage value="false"/>
+		<RegionOrder value="4321"/>
+		<EndManufacturingBitOverride value="false"/>
+		<Platform value="1"/>
+	</ProgSettings>
+	<Chipset>
+		<Region0 name="Descriptor Region">
+			<RegionLength value="0x00000000" edit="true" visible="true" name="Descriptor region length" help_text="If non-zero, specifies the length of the Descriptor region."/>
+			<Enabled value="true" edit="false" visible="false" name="Descriptor region enabled" help_text=""/>
+			<DescriptorMap name="Descriptor Map">
+				<NumComponents value="1" edit="true" visible="true" name="Number of Flash Components" help_text="Specifies the number of Flash components that will be installed on the target machine. Valid values are 0,1,2 - 0 causes only ME region to be built."/>
+				<ComponentBaseAddr value="0x03" edit="false" visible="true" name="Component Base Address" help_text="Identifies address bits [11:4] for the Component portion of the Flash Descriptor."/>
+				<RegionBaseAddr value="0x04" edit="false" visible="true" name="Region base address" help_text="Flash Region Base Address (FRBA). This identifies address bits [11:4] for the Region portion of the Flash Descriptor. Bits [24:12] and bits [3:0] are 0."/>
+				<NumMasters value="2" edit="false" visible="true" name="Number of Masters" help_text="Number Of Masters (NM). This field identifies the total number of Flash Regions. This number is 0's based."/>
+				<MasterBaseAddr value="0x06" edit="false" visible="true" name="Master base address" help_text="Identifies address bits [11:4] for the Master portion of the Flash Descriptor."/>
+				<SocStrapLength value="14" edit="false" visible="true" name="Number of SOC straps" help_text="SOC Strap Length (PSL). Identifies the 1s based number of Dwords of SOC Straps to be read, up to 255 DWs (1KB) max. A setting of all 0's indicates there are no SOC DW straps."/>
+				<SocBaseAddr value="0x10" edit="false" visible="true" name="SOC straps base address" help_text="Flash SOC Strap Base Address (FPSBA). This identifies address bits [11:4] for the SOC Strap portion of the Flash Descriptor. Bits [24:12] and bits [3:0] are 0. For validation purposes, the recommended FISBA is 0x10."/>
+				<ProcStrapLength value="0" edit="false" visible="true" name="Number of CPU Strap Length" help_text="The number of PROC straps to be read. Valid values are 0 to 1."/>
+				<ProcBaseAddr value="0x20" edit="false" visible="true" name="PROC straps base address" help_text="Flash Master Base Address (FMBA). This identifies address bits [11:4] for the Master portion of the Flash Descriptor. Bits [24:12] and bits [3:0] are 0. A recommended FMBA is 20h."/>
+			</DescriptorMap>
+			<Component name="Component Section">
+				<ReadStatusFreq value="20MHz" value_list="20MHz,,33MHz,,50MHz" edit="true" visible="true" name="Read ID and Read Status clock frequency" help_text="If more that one Flash component exists, this field must be the lowest common frequency of the different components."/>
+				<WriteEraseFreq value="20MHz" value_list="20MHz,,33MHz,,50MHz" edit="true" visible="true" name="Write and erase clock frequency" help_text="If more that one Flash component exists, this field must be the lowest common frequency of the different components."/>
+				<FastReadFreq value="20MHz" value_list="20MHz,,33MHz,,50MHz" edit="true" visible="true" name="Fast read clock frequency" help_text="This field is undefined if the Fast Read Support is set to false."/>
+				<FastReadSupport value="true" edit="true" visible="true" name="Fast read support" help_text="Enables/disables Fast Read support."/>
+				<ReadFreq value="20MHz" value_list="20MHz" edit="false" visible="true" name="Read clock frequency" help_text="Sets the Flash read frequency"/>
+				<DensityComp1 value="16MB" value_list="512KB,,1MB,,2MB,,4MB,,8MB,,16MB" edit="true" visible="true" name="Flash component 1 density" help_text="This field identifies the size of the 1st Flash component."/>
+				<DensityComp2 value="16MB" value_list="512KB,,1MB,,2MB,,4MB,,8MB,,16MB" edit="false" visible="true" name="Flash component 2 density" help_text="This field identifies the size of the 2nd Flash component."/>
+				<DualOutputFastReadSupport value="false" edit="true" visible="true" name="Dual Output Fast Read Support" help_text="false: Not Supported. true: Dual Output Fast Read instruction is issued in all cases where the the Fast Read would have been issued."/>
+				<InvalidInst0 value="0" edit="true" visible="true" name="Invalid Instruction 0" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against."/>
+				<InvalidInst1 value="0" edit="true" visible="true" name="Invalid Instruction 1" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against."/>
+				<InvalidInst2 value="0" edit="true" visible="true" name="Invalid Instruction 2" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against."/>
+				<InvalidInst3 value="0" edit="true" visible="true" name="Invalid Instruction 3" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against."/>
+				<FlashPartitionBndry value="0x00000000" edit="false" visible="true" name="Flash Partition Boundary" help_text="The FPBA build settings are configurable in Build -&gt; Build Settings."/>
+				<LowerFlashEraseSize value="0x00000" edit="false" visible="false" name="Lower Flash Erase Size" help_text="For Asymmetric flash parts, this is the lower of the two erase sizes."/>
+				<UpperFlashEraseSize value="0x00000" edit="false" visible="false" name="Upper Flash Erase Size" help_text="For Asymmetric flash parts, this is the upper of the two erase sizes."/>
+			</Component>
+			<MasterSection name="Master Access Section">
+				<Master name="CPU/BIOS">
+					<PciBus value="0" edit="false" visible="true" name="PCI Bus ID" help_text=""/>
+					<PciDevice value="0" edit="false" visible="true" name="PCI Device ID" help_text=""/>
+					<PciFunction value="0" edit="false" visible="true" name="PCI Function ID" help_text=""/>
+					<ReadAccess value="0xFF" value_list="0xFF,,0x0B,,0x1B" edit="true" visible="true" name="Read Access" help_text="0xFF = Debug/Manufacturing, 0x0B = Production, 0x1B = Production w/ access to PDR (should ONLY be used if PDR region is implemented).  Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted. Flmstr1[23:16] "/>
+					<WriteAccess value="0xFF" value_list="0xFF,,0x0A,,0x1A" edit="true" visible="true" name="Write Access" help_text="0xFF = Debug/Manufacturing, 0x0A = Production, 0x1A = Production w/ access to PDR (should ONLY be used if PDR region is implemented).  Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted. Flmstr1[31:24] "/>
+				</Master>
+				<Master name="Trusted Execution Environment (TXE)">
+					<PciBus value="0" edit="false" visible="true" name="PCI Bus ID" help_text=""/>
+					<PciDevice value="0" edit="false" visible="true" name="PCI Device ID" help_text=""/>
+					<PciFunction value="0" edit="false" visible="true" name="PCI Function ID" help_text=""/>
+					<ReadAccess value="0xFF" value_list="0xFF,,0x0D" edit="true" visible="true" name="Read Access" help_text="0xFF = Debug/Manufacturing, 0x0D = Production.  Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted. Flmstr2[23:16]"/>
+					<WriteAccess value="0xFF" value_list="0xFF,,0x0C" edit="true" visible="true" name="Write Access" help_text="0xFF = Debug/Manufacturing, 0x0C = Production.  Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted. Flmstr2[31:24] "/>
+				</Master>
+			</MasterSection>
+			<SocStraps name="SOC Straps">
+				<SocStrap0 name="SOC Strap 0">
+					<BiosPr4Base value="0x0000" edit="true" visible="true" name="BIOS Protected Range 4 Base" help_text="Specifies the lower base of the BIOS protected range number 4. Address bits [11:0] are assumed to be 12'h000 for the base comparison. (goes to bits [12:0] at register: [Protected_Range_4] PR4 (@0x84))."/>
+					<BiosPr4Limit value="0x0000" edit="true" visible="true" name="BIOS Protected Range 4 Limit" help_text="Specifies the upper limit of the BIOS protected range number 4. Address bits [11:0] are assumed to be 12'hFFF for the limit comparison. (goes to bits [28:16] at register: [Protected_Range_4] PR4 (@0x84))."/>
+					<BiosPr4WriteProtEn value="false" edit="true" visible="true" name="BIOS Protected Range 4 Write Protection Enable" help_text="When set, this bit indicates that the Base and Limit fields are valid and that writes directed to addresses between them (inclusive) must be blocked by hardware. The base and limit fields are ignored when this bit is cleared. Disabling this protected range could be done also by the security override pin strap. (this soft strap and the security override pin strap are reflected into bit 31 at register: [Protected_Range_4] PR4 (@0x84))."/>
+				</SocStrap0>
+				<SocStrap1 name="SOC Strap 1">
+					<DualOutputReadEnable value="false" edit="true" visible="true" name="Dual Output Read Enable" help_text="false: disabled. true: enabled. This soft-strap only has effect if dual output read is discovered as supported via SFDP. If SFDP table is not detected, this strap has no effect"/>
+					<DualIoReadEnable value="false" edit="true" visible="true" name="Dual I/O Read Enable" help_text="false: disabled. true: enabled. This soft strap has effect only if dual I/O read is discovered as supported via SFDP"/>
+					<QuadOutputReadEnable value="false" edit="true" visible="true" name="Quad Output Read Enable" help_text="false: disabled. true: enabled. This soft-strap only has effect if dual output read is discovered as supported via SFDP."/>
+					<QuadIoReadEnable value="false" edit="true" visible="true" name="Quad I/O Read Enable" help_text="false: disabled. true: enabled. This soft strap has effect only if dual I/O read is discovered as supported via SFDP"/>
+				</SocStrap1>
+				<SocStrap2>
+					<SpiBootBlockSize value="00: 64KB (Default): Invert A16 if Top Swap is enabled." value_list="00: 64KB (Default): Invert A16 if Top Swap is enabled.,,01: 128KB: Invert A17 if Top Swap is enabled.,,10: 256KB: Invert A18 if Top Swap is enabled." edit="true" visible="true" name="SPI Boot Block Size" help_text="Sets SPI Boot Block Size."/>
+					<LPSS1_F0_Disable value="false" edit="true" visible="true" name="SIO1 F0 Disable" help_text="Disable LPSS1 function 0 (DMA). false = enable. true = disable."/>
+					<LPSS1_F1_Disable value="false" edit="true" visible="true" name="SIO1 F1 Disable" help_text="Disable LPSS1 function 1 (PWM#1). false = enable. true = disable."/>
+					<LPSS1_F2_Disable value="false" edit="true" visible="true" name="SIO1 F2 Disable" help_text="Disable LPSS1 function 2 (PWM#2). false = enable. true = disable."/>
+					<LPSS1_F3_Disable value="false" edit="true" visible="true" name="SIO1 F3 Disable" help_text="Disable LPSS1 function 3 (HSUART#1). false = enable. true = disable."/>
+					<LPSS1_F4_Disable value="false" edit="true" visible="true" name="SIO1 F4 Disable" help_text="Disable LPSS1 function 4 (HSUART#2). false = enable. true = disable."/>
+					<LPSS1_F5_Disable value="false" edit="true" visible="true" name="SIO1 F5 Disable" help_text="Disable LPSS1 function 5 (SPI). false = enable. true = disable."/>
+					<SccEmmcDisable value="false" edit="true" visible="true" name="SCC eMMC 4.41 Disable" help_text="Disable legacy eMMC 4.41. false = enable. true = disable."/>
+					<SccSdioDisable value="false" edit="true" visible="true" name="SCC SDIO Disable" help_text="Disable SDIO. false = enable. true = disable."/>
+					<LPSS2_F0_Disable value="false" edit="true" visible="true" name="SIO2 F0 Disable" help_text="Disable LPSS2 function 0 (I2C#0). false = enable. true = disable."/>
+					<SccSdcardDisable value="false" edit="true" visible="true" name="SCC SDCARD Disable" help_text="Disable SDCARD. false = enable. true = disable."/>
+					<LpeDisable value="false" edit="true" visible="true" name="LPE Disable" help_text="Disable LPE. false = enable. true = disable."/>
+					<OtgDisable value="false" edit="true" visible="true" name="USB3 (OTG) Disable" help_text="Disable OTG. false = enable. true = disable."/>
+					<USB_Disable value="false" edit="true" visible="true" name="EHCI Disable" help_text="Disable USB: false = enable, true = disable."/>
+					<LPSS2_F1_Disable value="false" edit="true" visible="true" name="SIO2 F1 Disable" help_text="Disable LPSS2 function 1 (I2C#1). false = enable. true = disable."/>
+					<LPSS2_F2_Disable value="false" edit="true" visible="true" name="SIO2 F2 Disable" help_text="Disable LPSS2 function 2 (I2C#2). false = enable. true = disable."/>
+					<LPSS2_F3_Disable value="false" edit="true" visible="true" name="SIO2 F3 Disable" help_text="Disable LPSS2 function 3 (I2C#3). false = enable. true = disable."/>
+					<LPSS2_F4_Disable value="false" edit="true" visible="true" name="SIO2 F4 Disable" help_text="Disable LPSS2 function 4 (I2C#4). false = enable. true = disable."/>
+					<LPSS2_F5_Disable value="false" edit="true" visible="true" name="SIO2 F5 Disable" help_text="Disable LPSS2 function 5 (I2C#5). false = enable. true = disable."/>
+				</SocStrap2>
+				<SocStrap3 name="SOC Strap 3">
+					<LPSS2_F6_Disable value="false" edit="true" visible="true" name="SIO2 F6 Disable" help_text="Disable LPSS2 function 6 (I2C#6). false = enable. true = disable."/>
+					<LPSS2_F7_Disable value="false" edit="true" visible="true" name="SIO2 F7 Disable" help_text="Disable LPSS2 function 7 (I2C#7). false = enable. true = disable."/>
+					<DisBendClk_Ssen value="false" edit="true" visible="true" name="DISBENDCLK_SSEN" help_text="Enable spread spectrum to DISPLAY BEND: false = disable, true = enable."/>
+					<DispSsClk_Ssen value="false" edit="true" visible="true" name="DISPSSCLK_SSEN" help_text="Enable spread spectrum to DISPLAY SS: false = disable, true = enable."/>
+					<UshSsDisable value="false" edit="true" visible="true" name="SSIC Disable" help_text="Disable USH Super Speed PHY. false = enable. true = disable."/>
+					<IshDisable value="false" edit="true" visible="true" name="ISH Device Disable" help_text="false = enable. true = disable"/>
+					<Usb3RecalDisable value="true" edit="true" visible="true" name="USB3_Recal_Disable" help_text="true - Disable USB3 Recalibration Workaround. false - Enable USB3 Recalibration Workaround."/>
+					<PciClk_Ssen value="false" edit="true" visible="true" name="PCIECLK_SSEN" help_text="Enable spread spectrum to PCIe: false = disable, true = enable."/>
+					<iPeakDisable value="false" edit="true" visible="true" name="iPeak Disable" help_text="true - Disable USB2 iPeak after setting global, per-port comp bypass. false - iPeak is enabled."/>
+				</SocStrap3>
+				<SocStrap4 name="SOC Strap 4">
+					<PCIe0_DisableNew value="false" edit="true" visible="true" name="PCIe0_Disable_New" help_text="Disable PCIE port0. false = enable. true = disable"/>
+					<PCIe1_DisableNew value="false" edit="true" visible="true" name="PCIe1_Disable_New" help_text="Disable PCIE port1. false = enable. true = disable"/>
+					<PCIe2_DisableNew value="true" edit="true" visible="true" name="PCIe2_Disable_New" help_text="Disable PCIE port2. false = enable. true = disable"/>
+					<PCIe3_DisableNew value="true" edit="true" visible="true" name="PCIe3_Disable_New" help_text="Disable PCIE port3. false = enable. true = disable"/>
+					<USB2PHY_L1_WA_DISABLE value="true" edit="true" visible="true" name="USB2PHY_L1_WA_DISABLE" help_text="false = enable. true = disable"/>
+					<Usb3Lane0Disable value="true" edit="true" visible="true" name="USB3_Lane_0_Disable" help_text="Disables PMC access to this lane; this strap does not disable the lane itself. false = enable. true = disable"/>
+					<Usb3Lane1Disable value="true" edit="true" visible="true" name="USB3_Lane_1_Disable" help_text="Disables PMC access to this lane; this strap does not disable the lane itself. false = enable. true = disable"/>
+					<Usb3Lane2Disable value="true" edit="true" visible="true" name="USB3_Lane_2_Disable" help_text="Disables PMC access to this lane; this strap does not disable the lane itself. false = enable. true = disable"/>
+					<Usb3Lane3Disable value="true" edit="true" visible="true" name="USB3_Lane_3_Disable" help_text="Disables PMC access to this lane; this strap does not disable the lane itself. false = enable. true = disable"/>
+				</SocStrap4>
+				<SocStrap5 name="SOC Strap 5">
+					<LpcClk1En value="false" edit="true" visible="true" name="LPCCLK1 Enable" help_text="Enable the LPCCLK1. true: iLB drives LPC clock toward the LPC_CLKOUT1 pad. false: doesn't drive LPC clock toward the LPC_CLKOUT1 pad. This soft-strap is reflected to LPCC.LPCCLK1EN register."/>
+				</SocStrap5>
+				<SocStrap6 name="SOC Strap 6">
+					<RootPortConfig value="00: 4x1s Port 1 (x1), Port 2 (x1), Port 3 (x1), Port 4 (x1)." value_list="00: 4x1s Port 1 (x1), Port 2 (x1), Port 3 (x1), Port 4 (x1).,,01: 1x2, 2 x1s Port 1 (x2), Port 3 (x1), Port 4 (x1).,,10: 2x2 Port 1 (x2), Port 3 (x2).,,11: 1x4 Port 1 (x4)." edit="true" visible="true" name="Root Port Configuration" help_text="Root Port Configuration"/>
+				</SocStrap6>
+				<SocStrap10 name="SOC Strap 10">
+					<DunitStrpDun32BitDramIfc value="false" edit="true" visible="true" name="DUNIT_STRP_DUN_32bit_dram_ifc" help_text="Change the memory bus width: true = x32 bit width, false = x64 bit width."/>
+				</SocStrap10>
+			</SocStraps>
+			<VsccTable name="VSCC Table">
+				<SecVsccDevice name="Macronix MX25L3205 D/E">
+					<VendorId value="0xC2" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+					<DeviceId0 value="0x20" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+					<DeviceId1 value="0x16" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+				</SecVsccDevice>
+				<SecVsccDevice name="Winbond W25Q32BV">
+					<VendorId value="0xEF" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+					<DeviceId0 value="0x40" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+					<DeviceId1 value="0x16" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+				</SecVsccDevice>
+				<SecVsccDevice name="Winbond W25X32BV">
+					<VendorId value="0xEF" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+					<DeviceId0 value="0x30" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+					<DeviceId1 value="0x16" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+				</SecVsccDevice>
+				<SecVsccDevice name="Winbond W25Q64DW">
+					<VendorId value="0xEF" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+					<DeviceId0 value="0x60" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+					<DeviceId1 value="0x17" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+				</SecVsccDevice>
+				<SecVsccDevice name="Numonyx">
+					<VendorId value="0x20" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+					<DeviceId0 value="0x20" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+					<DeviceId1 value="0x16" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+				</SecVsccDevice>
+				<SecVsccDevice name="Winbond W25Q64BV">
+					<VendorId value="0xEF" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+					<DeviceId0 value="0x40" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+					<DeviceId1 value="0x17" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+				</SecVsccDevice>
+				<SecVsccDevice name="AT25DF64">
+					<VendorId value="0x1F" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID."/>
+					<DeviceId0 value="0x48" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID."/>
+					<DeviceId1 value="0x00" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID."/>
+				</SecVsccDevice>			
+			</VsccTable>
+			<OemSection name="OEM Section">
+				<InputFile value="" edit="true" visible="true" name="OEM Section Binary input file" help_text="The contents of this file (up to 256 bytes) are copied directly into the OEM section of the Flash Descriptor."/>
+			</OemSection>
+		</Region0>
+		<Region1 name="BIOS Region">
+			<Enabled value="true" edit="false" visible="false" name="BIOS region enabled" help_text=""/>
+			<RegionLength value="0x00000000" edit="true" visible="true" name="BIOS region length" help_text="This is the size of the BIOS region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF."/>
+			<InputFile value="" edit="true" visible="true" name="BIOS binary input file" help_text="This is the BIOS image binary that will be copied into this region."/>
+		</Region1>
+		<Region4 name="PDR Region">
+			<Enabled value="false" edit="false" visible="false" name="PDR region enabled" help_text=""/>
+			<RegionLength value="0x00000000" edit="true" visible="true" name="PDR region length" help_text="This is the size of the PDR region in bytes. Set this to zero and specify an input file if you want the tool to determine the appropriate size for the region."/>
+			<InputFile value="" edit="true" visible="true" name="PDR binary input file" help_text="This is the PDR image binary that will be copied into this region."/>
+		</Region4>
+		<Region2 name="TXE Region">
+			<Enabled value="true" edit="false" visible="false" name="TXE region enabled" help_text=""/>
+			<InputFile value="" edit="true" visible="true" name="TXE Binary Input File" help_text="This is the path to a binary file that will be used for the TXE region."/>
+			<RegionOffset value="0x00000000" edit="true" visible="true" name="Region Offset" help_text="The offset from the beginning of flash where the TXE region will start. If 0, then FITC will determine where to put it based on the region order."/>
+			<RomBypassVector value="00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 " edit="true" visible="false" name="Rom Bypass Vector Instruction" help_text="Up to 128 bits, this field represents the instruction that is placed at the beginning of the FPT used to jump to the Rom Bypass partition."/>
+			<RegionLength value="0x00000000" edit="true" visible="false" name="TXE region length" help_text="This is the size of the TXE region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF."/>
+			<FlashCycleLifetime value="0" edit="false" visible="false" name="Flash Cycle Lifetime" help_text="Time in years the flash should last."/>
+			<FlashCycleLimit value="0" edit="false" visible="false" name="Flash Cycle Limit" help_text="This number multiplied by 1000 equals the maximum number of erase cycles the flash can perform."/>
+			<TicksToAdd value="0xFFFF" edit="true" visible="false" name="Ticks to add" help_text="This is used for access management."/>
+			<TokensToAdd value="0xFFFF" edit="true" visible="false" name="Tokens to add" help_text="This is used for access management."/>
+			<FptHeaderVer value="0x20" edit="false" visible="true" name="FPT Header Version" help_text="Defines the FPT header type set in the FPT header."/>
+			<FptEntryType value="0x10" edit="false" visible="false" name="FPT Entry Type" help_text="Defines the FPT entry type set in the FPT header that defines the type of entries used in the FPT."/>
+			<SecLayoutType value="0" edit="false" visible="false" name="TXE Layout Type" help_text="This setting reflects the layout type used after modifying the build settings."/>
+			<Configuration name="Configuration">
+				<TXE name="TXE">
+					<FwuOemId value="00000000-0000-0000-0000-000000000000" edit="true" visible="true" name="FW Update OEM ID" help_text="Enter UUID or file containing the UUID.  This UUID will make sure that customers can only update a platform with an image coming from the OEM of the platform.  If set to zero than any input is valid (including none) when doing a FW update."/>
+					<HostSecRegUnlock value="true" edit="true" visible="true" name="Host TXE Region Flash Protection Override" help_text="Set this to TRUE if you want the ability to have BIOS write to the TXE Region. Set to FALSE to opt out."/>
+					<OemTag value="0x00000000" edit="true" visible="true" name="OEM Tag" help_text="An OEM identification number to describe the flash image represented by the value."/>
+					<HideFwUpdCtrl value="false" edit="true" visible="true" name="Hide FW Update Control" help_text="Setting this parameter to 'true' will not allow end users to 'disable' or 'password protect' the TXE FW Update mechanism"/>
+					<FpfMirroringFile value="" edit="true" visible="true" name="FPF Mirroring File" help_text="Enter a path to the FPF mirroring file. Note: This option will create a FPF configuration for TXE Firmware to emulate fuse configuration for testing purpose. This option will not program real fuses. Fuse values programmed here will not be used once manufacturing is closed. Real fuses should be programmed using Flash Programming Tool before closing manufacturing."/>
+					<CekConfiguration value="" edit="true" visible="true" name="CEK Configuration" help_text="Binary file to use for CEK Configuration. Must be exactly 256 bytes."/>
+					<DisplayConfig value="0x00000000" edit="true" visible="true" name="HDCP Internal Display Configuration" help_text="Setting allows for specifying which ports are connected to internal displays. Maximum of two ports can be set."/>
+					<PlayReadyConfig value="Windows" value_list="Windows,,Android" edit="true" visible="true" name="PlayReady Configuration" help_text="Setting this parameter to 'Android' will disable PlayReady 3.0 remote provisioning."/>
+				</TXE>
+				<FeaturesSupported name="Features Supported"/>
+				<Nfc name="Intel (R) NFC Capabilities">
+					<NfcSlaveAddress value="0x29-NXP" value_list="0x28-NXP,,0x29-NXP,,0x2A-NXP,,0x2B-NXP" edit="true" visible="true" name="I2C Address" help_text="This I2C address should match the I2C Address on the NFC hardware device."/>
+				</Nfc>
+				<SetupConfig name="Setup and Configuration">
+					<UpgrdSrvcOdmId value="0x00000000" edit="true" visible="true" name="ODM ID used by Intel (R) Services" help_text="ID generated by or registered with Intel (R) Services web servers in order to identify the ODM/Board builder.  First of three IDs stored in flash and accessible through Intel (R) TXEI interface."/>
+					<UpgrdSrvcSysIntId value="0x00000000" edit="true" visible="true" name="System Integrator ID used by Intel (R) Services" help_text="ID generated by or registered with Intel (R) Services web servers in order to identify the System Integrator.  Second of three IDs stored in flash and accessible through Intel (R) TXEI interface."/>
+					<UpgrdSrvcRsvdId value="0x00000000" edit="true" visible="true" name="Reserved ID used by Intel (R) Services" help_text="Reserved ID may be used for a Reseller ID or other Intel (R) Services IDs in the future."/>
+					<PermitTimerResolution value="Days" value_list="Days,,Minutes" edit="true" visible="true" name="Permit Period Timer Resolution" help_text="This setting determines what the permit period timer resolution will be."/>
+				</SetupConfig>
+				<MDES name="TXE Debug Event Service">
+					<ErrorFilter value="All" value_list="All,,Low/High/Critical,,High/Critical,,Critical" edit="true" visible="true" name="Error Filter" help_text="Set the error filter"/>
+					<BufferSize value="0" edit="true" visible="true" name="Buffer Size" help_text="Set the buffer size."/>
+					<MdesState value="false" edit="true" visible="true" name="MDES State with Values" help_text="true = Enable, false = Disable"/>
+					<LoggingInt value="Flash" value_list="Flash,,HECI,,I2C" edit="true" visible="true" name="Logging Interface" help_text="Set the logging interface to the interface to be used."/>
+					<EventFilters>
+						<FilterGroup0 value="0x00000000" edit="true" visible="true" name="Filter Group 0" help_text=""/>
+						<FilterGroup1 value="0x00000000" edit="true" visible="true" name="Filter Group 1" help_text=""/>
+						<FilterGroup2 value="0x00000000" edit="true" visible="true" name="Filter Group 2" help_text=""/>
+						<FilterGroup3 value="0x00000000" edit="true" visible="true" name="Filter Group 3" help_text=""/>
+						<FilterGroup4 value="0x00000000" edit="true" visible="true" name="Filter Group 4" help_text=""/>
+						<FilterGroup5 value="0x00000000" edit="true" visible="true" name="Filter Group 5" help_text=""/>
+						<FilterGroup6 value="0x00000000" edit="true" visible="true" name="Filter Group 6" help_text=""/>
+						<FilterGroup7 value="0x00000000" edit="true" visible="true" name="Filter Group 7" help_text=""/>
+						<FilterGroup8 value="0x00000000" edit="true" visible="true" name="Filter Group 8" help_text=""/>
+						<FilterGroup9 value="0x00000000" edit="true" visible="true" name="Filter Group 9" help_text=""/>
+						<FilterGroup10 value="0x00000000" edit="true" visible="true" name="Filter Group 10" help_text=""/>
+						<FilterGroup11 value="0x00000000" edit="true" visible="true" name="Filter Group 11" help_text=""/>
+						<FilterGroup12 value="0x00000000" edit="true" visible="true" name="Filter Group 12" help_text=""/>
+						<FilterGroup13 value="0x00000000" edit="true" visible="true" name="Filter Group 13" help_text=""/>
+						<FilterGroup14 value="0x00000000" edit="true" visible="true" name="Filter Group 14" help_text=""/>
+						<FilterGroup15 value="0x00000000" edit="true" visible="true" name="Filter Group 15" help_text=""/>
+						<FilterGroup16 value="0x00000000" edit="true" visible="true" name="Filter Group 16" help_text=""/>
+						<FilterGroup17 value="0x00000000" edit="true" visible="true" name="Filter Group 17" help_text=""/>
+						<FilterGroup18 value="0x00000000" edit="true" visible="true" name="Filter Group 18" help_text=""/>
+						<FilterGroup19 value="0x00000000" edit="true" visible="true" name="Filter Group 19" help_text=""/>
+						<FilterGroup20 value="0x00000000" edit="true" visible="true" name="Filter Group 20" help_text=""/>
+						<FilterGroup21 value="0x00000000" edit="true" visible="true" name="Filter Group 21" help_text=""/>
+						<FilterGroup22 value="0x00000000" edit="true" visible="true" name="Filter Group 22" help_text=""/>
+						<FilterGroup23 value="0x00000000" edit="true" visible="true" name="Filter Group 23" help_text=""/>
+						<FilterGroup24 value="0x00000000" edit="true" visible="true" name="Filter Group 24" help_text=""/>
+						<FilterGroup25 value="0x00000000" edit="true" visible="true" name="Filter Group 25" help_text=""/>
+						<FilterGroup26 value="0x00000000" edit="true" visible="true" name="Filter Group 26" help_text=""/>
+						<FilterGroup27 value="0x00000000" edit="true" visible="true" name="Filter Group 27" help_text=""/>
+						<FilterGroup28 value="0x00000000" edit="true" visible="true" name="Filter Group 28" help_text=""/>
+						<FilterGroup29 value="0x00000000" edit="true" visible="true" name="Filter Group 29" help_text=""/>
+						<FilterGroup30 value="0x00000000" edit="true" visible="true" name="Filter Group 30" help_text=""/>
+						<FilterGroup31 value="0x00000000" edit="true" visible="true" name="Filter Group 31" help_text=""/>
+						<FilterGroup32 value="0x00000000" edit="true" visible="true" name="Filter Group 32" help_text=""/>
+						<FilterGroup33 value="0x00000000" edit="true" visible="true" name="Filter Group 33" help_text=""/>
+						<FilterGroup34 value="0x00000000" edit="true" visible="true" name="Filter Group 34" help_text=""/>
+						<FilterGroup35 value="0x00000000" edit="true" visible="true" name="Filter Group 35" help_text=""/>
+						<FilterGroup36 value="0x00000000" edit="true" visible="true" name="Filter Group 36" help_text=""/>
+						<FilterGroup37 value="0x00000000" edit="true" visible="true" name="Filter Group 37" help_text=""/>
+						<FilterGroup38 value="0x00000000" edit="true" visible="true" name="Filter Group 38" help_text=""/>
+						<FilterGroup39 value="0x00000000" edit="true" visible="true" name="Filter Group 39" help_text=""/>
+						<FilterGroup40 value="0x00000000" edit="true" visible="true" name="Filter Group 40" help_text=""/>
+						<FilterGroup41 value="0x00000000" edit="true" visible="true" name="Filter Group 41" help_text=""/>
+						<FilterGroup42 value="0x00000000" edit="true" visible="true" name="Filter Group 42" help_text=""/>
+						<FilterGroup43 value="0x00000000" edit="true" visible="true" name="Filter Group 43" help_text=""/>
+						<FilterGroup44 value="0x00000000" edit="true" visible="true" name="Filter Group 44" help_text=""/>
+						<FilterGroup45 value="0x00000000" edit="true" visible="true" name="Filter Group 45" help_text=""/>
+						<FilterGroup46 value="0x00000000" edit="true" visible="true" name="Filter Group 46" help_text=""/>
+						<FilterGroup47 value="0x00000000" edit="true" visible="true" name="Filter Group 47" help_text=""/>
+						<FilterGroup48 value="0x00000000" edit="true" visible="true" name="Filter Group 48" help_text=""/>
+						<FilterGroup49 value="0x00000000" edit="true" visible="true" name="Filter Group 49" help_text=""/>
+						<FilterGroup50 value="0x00000000" edit="true" visible="true" name="Filter Group 50" help_text=""/>
+						<FilterGroup51 value="0x00000000" edit="true" visible="true" name="Filter Group 51" help_text=""/>
+						<FilterGroup52 value="0x00000000" edit="true" visible="true" name="Filter Group 52" help_text=""/>
+						<FilterGroup53 value="0x00000000" edit="true" visible="true" name="Filter Group 53" help_text=""/>
+						<FilterGroup54 value="0x00000000" edit="true" visible="true" name="Filter Group 54" help_text=""/>
+						<FilterGroup55 value="0x00000000" edit="true" visible="true" name="Filter Group 55" help_text=""/>
+						<FilterGroup56 value="0x00000000" edit="true" visible="true" name="Filter Group 56" help_text=""/>
+						<FilterGroup57 value="0x00000000" edit="true" visible="true" name="Filter Group 57" help_text=""/>
+						<FilterGroup58 value="0x00000000" edit="true" visible="true" name="Filter Group 58" help_text=""/>
+						<FilterGroup59 value="0x00000000" edit="true" visible="true" name="Filter Group 59" help_text=""/>
+						<FilterGroup60 value="0x00000000" edit="true" visible="true" name="Filter Group 60" help_text=""/>
+						<FilterGroup61 value="0x00000000" edit="true" visible="true" name="Filter Group 61" help_text=""/>
+						<FilterGroup62 value="0x00000000" edit="true" visible="true" name="Filter Group 62" help_text=""/>
+						<FilterGroup63 value="0x00000000" edit="true" visible="true" name="Filter Group 63" help_text=""/>
+						<FilterGroup64 value="0x00000000" edit="true" visible="true" name="Filter Group 64" help_text=""/>
+						<FilterGroup65 value="0x00000000" edit="true" visible="true" name="Filter Group 65" help_text=""/>
+						<FilterGroup66 value="0x00000000" edit="true" visible="true" name="Filter Group 66" help_text=""/>
+						<FilterGroup67 value="0x00000000" edit="true" visible="true" name="Filter Group 67" help_text=""/>
+						<FilterGroup68 value="0x00000000" edit="true" visible="true" name="Filter Group 68" help_text=""/>
+						<FilterGroup69 value="0x00000000" edit="true" visible="true" name="Filter Group 69" help_text=""/>
+						<FilterGroup70 value="0x00000000" edit="true" visible="true" name="Filter Group 70" help_text=""/>
+						<FilterGroup71 value="0x00000000" edit="true" visible="true" name="Filter Group 71" help_text=""/>
+						<FilterGroup72 value="0x00000000" edit="true" visible="true" name="Filter Group 72" help_text=""/>
+						<FilterGroup73 value="0x00000000" edit="true" visible="true" name="Filter Group 73" help_text=""/>
+						<FilterGroup74 value="0x00000000" edit="true" visible="true" name="Filter Group 74" help_text=""/>
+						<FilterGroup75 value="0x00000000" edit="true" visible="true" name="Filter Group 75" help_text=""/>
+						<FilterGroup76 value="0x00000000" edit="true" visible="true" name="Filter Group 76" help_text=""/>
+						<FilterGroup77 value="0x00000000" edit="true" visible="true" name="Filter Group 77" help_text=""/>
+						<FilterGroup78 value="0x00000000" edit="true" visible="true" name="Filter Group 78" help_text=""/>
+						<FilterGroup79 value="0x00000000" edit="true" visible="true" name="Filter Group 79" help_text=""/>
+						<FilterGroup80 value="0x00000000" edit="true" visible="true" name="Filter Group 80" help_text=""/>
+						<FilterGroup81 value="0x00000000" edit="true" visible="true" name="Filter Group 81" help_text=""/>
+						<FilterGroup82 value="0x00000000" edit="true" visible="true" name="Filter Group 82" help_text=""/>
+						<FilterGroup83 value="0x00000000" edit="true" visible="true" name="Filter Group 83" help_text=""/>
+						<FilterGroup84 value="0x00000000" edit="true" visible="true" name="Filter Group 84" help_text=""/>
+						<FilterGroup85 value="0x00000000" edit="true" visible="true" name="Filter Group 85" help_text=""/>
+						<FilterGroup86 value="0x00000000" edit="true" visible="true" name="Filter Group 86" help_text=""/>
+						<FilterGroup87 value="0x00000000" edit="true" visible="true" name="Filter Group 87" help_text=""/>
+						<FilterGroup88 value="0x00000000" edit="true" visible="true" name="Filter Group 88" help_text=""/>
+						<FilterGroup89 value="0x00000000" edit="true" visible="true" name="Filter Group 89" help_text=""/>
+						<FilterGroup90 value="0x00000000" edit="true" visible="true" name="Filter Group 90" help_text=""/>
+						<FilterGroup91 value="0x00000000" edit="true" visible="true" name="Filter Group 91" help_text=""/>
+						<FilterGroup92 value="0x00000000" edit="true" visible="true" name="Filter Group 92" help_text=""/>
+						<FilterGroup93 value="0x00000000" edit="true" visible="true" name="Filter Group 93" help_text=""/>
+						<FilterGroup94 value="0x00000000" edit="true" visible="true" name="Filter Group 94" help_text=""/>
+						<FilterGroup95 value="0x00000000" edit="true" visible="true" name="Filter Group 95" help_text=""/>
+						<FilterGroup96 value="0x00000000" edit="true" visible="true" name="Filter Group 96" help_text=""/>
+						<FilterGroup97 value="0x00000000" edit="true" visible="true" name="Filter Group 97" help_text=""/>
+						<FilterGroup98 value="0x00000000" edit="true" visible="true" name="Filter Group 98" help_text=""/>
+						<FilterGroup99 value="0x00000000" edit="true" visible="true" name="Filter Group 99" help_text=""/>
+						<FilterGroup100 value="0x00000000" edit="true" visible="true" name="Filter Group 100" help_text=""/>
+						<FilterGroup101 value="0x00000000" edit="true" visible="true" name="Filter Group 101" help_text=""/>
+						<FilterGroup102 value="0x00000000" edit="true" visible="true" name="Filter Group 102" help_text=""/>
+						<FilterGroup103 value="0x00000000" edit="true" visible="true" name="Filter Group 103" help_text=""/>
+						<FilterGroup104 value="0x00000000" edit="true" visible="true" name="Filter Group 104" help_text=""/>
+						<FilterGroup105 value="0x00000000" edit="true" visible="true" name="Filter Group 105" help_text=""/>
+						<FilterGroup106 value="0x00000000" edit="true" visible="true" name="Filter Group 106" help_text=""/>
+						<FilterGroup107 value="0x00000000" edit="true" visible="true" name="Filter Group 107" help_text=""/>
+						<FilterGroup108 value="0x00000000" edit="true" visible="true" name="Filter Group 108" help_text=""/>
+						<FilterGroup109 value="0x00000000" edit="true" visible="true" name="Filter Group 109" help_text=""/>
+						<FilterGroup110 value="0x00000000" edit="true" visible="true" name="Filter Group 110" help_text=""/>
+						<FilterGroup111 value="0x00000000" edit="true" visible="true" name="Filter Group 111" help_text=""/>
+						<FilterGroup112 value="0x00000000" edit="true" visible="true" name="Filter Group 112" help_text=""/>
+						<FilterGroup113 value="0x00000000" edit="true" visible="true" name="Filter Group 113" help_text=""/>
+						<FilterGroup114 value="0x00000000" edit="true" visible="true" name="Filter Group 114" help_text=""/>
+						<FilterGroup115 value="0x00000000" edit="true" visible="true" name="Filter Group 115" help_text=""/>
+						<FilterGroup116 value="0x00000000" edit="true" visible="true" name="Filter Group 116" help_text=""/>
+						<FilterGroup117 value="0x00000000" edit="true" visible="true" name="Filter Group 117" help_text=""/>
+						<FilterGroup118 value="0x00000000" edit="true" visible="true" name="Filter Group 118" help_text=""/>
+						<FilterGroup119 value="0x00000000" edit="true" visible="true" name="Filter Group 119" help_text=""/>
+						<FilterGroup120 value="0x00000000" edit="true" visible="true" name="Filter Group 120" help_text=""/>
+						<FilterGroup121 value="0x00000000" edit="true" visible="true" name="Filter Group 121" help_text=""/>
+						<FilterGroup122 value="0x00000000" edit="true" visible="true" name="Filter Group 122" help_text=""/>
+						<FilterGroup123 value="0x00000000" edit="true" visible="true" name="Filter Group 123" help_text=""/>
+						<FilterGroup124 value="0x00000000" edit="true" visible="true" name="Filter Group 124" help_text=""/>
+						<FilterGroup125 value="0x00000000" edit="true" visible="true" name="Filter Group 125" help_text=""/>
+						<FilterGroup126 value="0x00000000" edit="true" visible="true" name="Filter Group 126" help_text=""/>
+						<FilterGroup127 value="0x00000000" edit="true" visible="true" name="Filter Group 127" help_text=""/>
+					</EventFilters>
+				</MDES>
+				<Ish>
+					<IshPdt value="" edit="true" visible="true" name="PDT Binary" help_text="Path to PDT Binary."/>
+				</Ish>
+			</Configuration>
+		</Region2>
+	</Chipset>
+</ftoolRoot>

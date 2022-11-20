@@ -1,0 +1,4 @@
+Local FWU Override Counter = 0
+Local FWU Override Qualifier = 1
+Flash Descriptor Override Pin-Strap Ignore = 0
+

@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ftoolRoot version="2.22">
+    <ProgSettings>
+        <GenIntermediateFiles value="true" />
+        <BuildOutputFilename value="$DestDir\outimage.bin" />
+        <BuildCompactImage value="false" />
+        <RegionOrder value="4321" />
+        <EndManufacturingBitOverride value="false" />
+        <SkuType value="Premium" />
+    </ProgSettings>
+    <Chipset>
+        <Region0 name="Descriptor Region">
+            <RegionLength value="0x00000000" edit="true" visible="true" name="Descriptor region length" help_text="If non-zero, specifies the length of the Descriptor region." />
+            <DescriptorMap name="Descriptor Map">
+                <NumComponents value="2" edit="true" visible="true" name="Number of Flash Components" help_text="Specifies the number of Flash components that will be installed on the target machine. Valid values are 0,1,2 - 0 causes only ME region to be built." />
+            </DescriptorMap>
+            <Component name="Component Section">
+                <ReadStatusFreq value="50MHz" value_list="20MHz,,33MHz,,50MHz" edit="true" visible="true" name="Read ID and Read Status clock frequency" help_text="If more that one Flash component exists, this field must be the lowest common frequency of the different components." />
+                <WriteEraseFreq value="50MHz" value_list="20MHz,,33MHz,,50MHz" edit="true" visible="true" name="Write and erase clock frequency" help_text="If more that one Flash component exists, this field must be the lowest common frequency of the different components." />
+                <FastReadFreq value="50MHz" value_list="20MHz,,33MHz,,50MHz" edit="true" visible="true" name="Fast read clock frequency" help_text="This field is undefined if the Fast Read Support is set to false." />
+                <FastReadSupport value="true" edit="true" visible="true" name="Fast read support" help_text="Enables/disables Fast Read support." />
+                <DensityComp1 value="8MB" value_list="512KB,,1MB,,2MB,,4MB,,8MB,,16MB,,32MB,,64MB" edit="true" visible="true" name="Flash component 1 density" help_text="This field identifies the size of the 1st Flash component." />
+                <DensityComp2 value="8MB" value_list="512KB,,1MB,,2MB,,4MB,,8MB,,16MB,,32MB,,64MB" edit="true" visible="true" name="Flash component 2 density" help_text="This field identifies the size of the 2nd Flash component." />
+                <DualOutputFastReadSupport value="true" edit="true" visible="true" name="Dual Output Fast Read Support" help_text="false: Not Supported. true: Dual Output Fast Read instruction is issued in all cases where the the Fast Read would have been issued." />
+                <InvalidInst0 value="0" edit="true" visible="true" name="Invalid Instruction 0" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+                <InvalidInst1 value="0" edit="true" visible="true" name="Invalid Instruction 1" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+                <InvalidInst2 value="0" edit="true" visible="true" name="Invalid Instruction 2" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+                <InvalidInst3 value="0" edit="true" visible="true" name="Invalid Instruction 3" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+                <InvalidInst4 value="0" edit="true" visible="true" name="Invalid Instruction 4" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+                <InvalidInst5 value="0" edit="true" visible="true" name="Invalid Instruction 5" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+                <InvalidInst6 value="0" edit="true" visible="true" name="Invalid Instruction 6" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+                <InvalidInst7 value="0" edit="true" visible="true" name="Invalid Instruction 7" help_text="Op-code for an invalid instruction that the Flash Controller should protect against chip erase. This byte should be set to 0 if there is no instruction to protect against." />
+            </Component>
+            <MasterSection name="Master Access Section">
+                <Master name="CPU/BIOS">
+                    <ReadAccess value="0xFF" value_list="0xFF,,0x0B,,0x1B" edit="true" visible="true" name="Read Access" help_text="0xFF = Debug/Manufacturing, 0x0B = Production, 0x1B = Production w/ access to PDR (should ONLY be used if PDR region is implemented).  Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted." />
+                    <WriteAccess value="0xFF" value_list="0xFF,,0x0A,,0x1A" edit="true" visible="true" name="Write Access" help_text="0xFF = Debug/Manufacturing, 0x0A = Production, 0x1A = Production w/ access to PDR (should ONLY be used if PDR region is implemented).  Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted." />
+                </Master>
+                <Master name="Manageability Engine (ME)">
+                    <ReadAccess value="0xFF" value_list="0xFF,,0x0D" edit="true" visible="true" name="Read Access" help_text="0xFF = Debug/Manufacturing, 0x0D = Production.  Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted." />
+                    <WriteAccess value="0xFF" value_list="0xFF,,0x0C" edit="true" visible="true" name="Write Access" help_text="0xFF = Debug/Manufacturing, 0x0C = Production.  Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted." />
+                </Master>
+                <Master name="GbE LAN">
+                    <ReadAccess value="0xFF" value_list="0xFF,,0x08" edit="true" visible="true" name="Read Access" help_text="0xFF = Debug/Manufacturing, 0x08 = Production.  Each bit corresponds to Regions [7:0]. If the bit is set, read access is granted." />
+                    <WriteAccess value="0xFF" value_list="0xFF,,0x08" edit="true" visible="true" name="Write Access" help_text="0xFF = Debug/Manufacturing, 0x08 = Production.  Each bit corresponds to Regions [7:0]. If the bit is set, write access is granted." />
+                </Master>
+            </MasterSection>
+            <PchStraps name="PCH Straps">
+                <PchStrap0 name="PCH Strap 0">
+                    <BiosBootBlockSize value="64KB" value_list="64KB,,128KB,,256KB,,512KB,,1MB" edit="true" visible="true" name="BIOS Boot Block Size" help_text="Sets BIOS Boot Block Size (BBBS)." />
+                    <DmiReqIdDisable value="false" edit="true" visible="true" name="DMI RequesterID Check Disable" help_text="The purpose is to support server environments with multiple processors where each have a different RequesterID that can each access the flash.  false = DMI RequesterID Checks are enabled.  true = DMI RequesterID Checks are disabled." />
+                    <MacSecDisable value="true" edit="false" visible="true" name="MACsec Disable" help_text="MACsec is a hop-by-hop network security solution. It provides Layer 2 encryption and authenticity/integrity protection for packets traveling between MACsec-enabled nodes of the network." />
+                    <LanPhyPowerControl value="GPIO12 is used in native mode as LANPHYPC" value_list="GPIO12 is used in native mode as LANPHYPC,,GPIO12 default is General Purpose (GP) output" edit="false" visible="true" name="LAN PHY Power Control GPIO12 Select" help_text="Lan Phy Power" />
+                    <SmBusEnable value="true" edit="true" visible="true" name="Intel (R) ME SMBus Enable" help_text="Configures if Intel (R) ME SMBus is enabled." />
+                    <SmLink0Enable value="true" edit="true" visible="true" name="SMLink0 Enable" help_text="Configures if SmLink0 is enabled." />
+                    <SmLink1Enable value="true" edit="true" visible="true" name="SMLink1 Enable" help_text="Configures if SmLink1 is enabled." />
+                </PchStrap0>
+                <PchStrap1 name="PCH Strap 1">
+                    <TpmClockFrequency value="33MHz" value_list="20MHz,,33MHz" edit="true" visible="true" name="TPM Clock Frequency" help_text="This field identifies the frequency that should be used with the TPM on SPI. This field is undefined if the TPM on SPI is disabled by softstrap." />
+                    <TpmOnSpi value="false" edit="true" visible="true" name="TPM on SPI" help_text="TOS Help" />
+                    <DualOutputReadEnable value="true" edit="true" visible="true" name="Dual Output Read Enable" help_text="This soft strap only has effect if Dual Output read is discovered as supported vis the SFDP. If parameter table is not detected via SFDP, this bit has no effect and Dual Output Read is controlled via the Flash Descriptor Component Section. Dual Output Fast Read Support Bit." />
+                    <DualIoReadEnable value="true" edit="true" visible="true" name="Dual IO Read Enable" help_text="This soft strap only has effect if Dual I/O Read is discovered as supported via the SFDP." />
+                    <QuadOutputReadEnable value="true" edit="true" visible="true" name="Quad Output Read Enable" help_text="This soft strap only has effect if Quad Output Read is discovered as supported via the SFDP." />
+                    <QuadIoReadEnable value="true" edit="true" visible="true" name="Quad IO Read Enable" help_text="This soft strap only has effect if Quad Output Read is discovered as supported via the SFDP." />
+                </PchStrap1>
+                <PchStrap2 name="PCH Strap 2">
+                    <SmBusI2cAddrEn value="false" edit="true" visible="true" name="Intel (R) ME SMBus I2C Address Enable " help_text="Intel (R) ME SMBus I2C Target Address Enabled" />
+                    <SmBusI2cAddr value="0x00" edit="true" visible="true" name="Intel (R) ME SMBus I2C Address" help_text="Intel (R) ME SMBus I2C Target Address (this is for testing purposes)" />
+                    <SmBusMctpAddrEn value="false" edit="true" visible="true" name="Intel (R) ME SMBus MCTP Address Enable " help_text="Intel (R) ME SMBus MCTP Target Address Enabled" />
+                    <SmBusMctpAddr value="0x00" edit="true" visible="true" name="Intel (R) ME SMBus MCTP Address " help_text="Intel (R) ME SMBus MCTP Target Address" />
+                    <SmBusAsdAddrEn value="false" edit="true" visible="true" name="Intel (R) ME SMBus ASD Address Enable " help_text="Intel (R) ME SMBus ASD Target Address Enabled" />
+                    <SmBusAsdAddr value="0x00" edit="true" visible="true" name="Intel (R) ME SMBus ASD Address " help_text="Intel (R) ME SMBus ASD Target Address" />
+                </PchStrap2>
+                <PchStrap4 name="PCH Strap 4">
+                    <GbePhySmBusAddr value="0x64" edit="true" visible="true" name="GbE PHY SMBus Address" help_text="If bit 0 set, OEM programmed SmBus address is assigned to GbE PHY by chipset. This strap must be made available to ME &amp; PMC." />
+                    <GbeSmBusAddr value="0x70" edit="true" visible="true" name="GbE MAC SMBus Address" help_text="This is the SMBus address used by SMT to accept SMBus cycles from the PHY. This must be provided to SMT1,2,3 and GbE This strap must be backed in the RTC well. The recommended flash value for this field is: 1110000b" />
+                </PchStrap4>
+                <PchStrap7 name="PCH Strap 7">
+                    <Smt1SubVidDid4ASF value="0x00000000" edit="true" visible="true" name="Intel (R) ME SMBus Subsystem Vendor &amp; Device ID for ASF" help_text="[15:0]-Subsystem Vendor ID, [31:16]-Subsystem Device ID. The values are provided as bytes 8-9 and 10-11 of the data payload to an external master when it initiates a Directed GET UDID Block Read Command to the Intel (R) ME SMBus controller's ASF2 address" />
+                </PchStrap7>
+                <PchStrap9 name="PCH Strap 9">
+                    <TempAlertSml1AlertSel value="TEMP_ALERT#" value_list="SML1ALERT#,,TEMP_ALERT#" edit="true" visible="true" name="TEMP_ALERT# or SML1ALERT# Select" help_text="This strap determines the native mode operation of GPIO73."/>
+                    <SubtractDecodeAgentEn value="true" edit="true" visible="true" name="Subtractive Decode Agent Enable" help_text="Set this bit to 'true' if there is a PCI bridge chip connnected to the PCH, that requires subtractive decode agent. Set to 'false' if the platform has no PCI bridge chip." />
+                    <GbePciePortSelect value="100: Port 5 Lane 2" value_list="000: Port 3,,001: Port 4,,010: Port 5 Lane 0,,011: Port 5 Lane 1,,100: Port 5 Lane 2,,101: Port 5 Lane 3" edit="true" visible="true" name="GbE PCIe Port Select" help_text="Sets the default value of the RPC.GBEPCIERPSEL register which is used to determine which PCIe port to use for GbE MAC/PHY over PCI Express communication." />
+                    <PCIeLaneReversal2 value="false" edit="true" visible="true" name="PCIe Lane Reversal 2" help_text="Sets the default value for the PCIe Port 5, Device 28 Function 4Lane Reversal register." />
+                    <PCIeLaneReversal1 value="false" edit="true" visible="true" name="PCIe Lane Reversal 1" help_text="Sets the default value for the PCIe Port 1, Device 28 Function 0, Lane Reversal register." />
+                    <PCIePortConf1 value="00: 4x1 Ports 1-4 (x1)" value_list="00: 4x1 Ports 1-4 (x1),,01: 1x2, 2x1 Port 1 (x2), Port 2 (disabled), Ports 3, 4 (x1),,10: 2x2 Port 1 (x2), Port 3 (x2), Ports 2, 4 (disabled),,11: 1x4 Port 1 (x4), Ports 2-4 (disabled)" edit="true" visible="true" name="PCIe Port Configuration Strap 1" help_text="These straps set the default value of the PCI Express Port Configuration 1 register covering PCIe ports 1-4." />
+                    <Usb3Port3PciePort1Mode value="PCIe Lane 1 is statically assigned to PCI Express (or GbE)" value_list="PCIe Lane 1 is statically assigned to PCI Express (or GbE),,PCIe Lane 1 is statically assigned to USB3 Port 3" edit="true" visible="true" name="USB3 Port 3 PCIe Port 1 Mode" help_text="This soft strap sets the default value of the USB3 PCI Express Port1 Mode register that resides in the core well." />
+                    <Usb3Port4PciePort2Mode value="PCIe Lane 2 is statically assigned to USB3 Port 4" value_list="PCIe Lane 2 is statically assigned to PCI Express (or GbE),,PCIe Lane 2 is statically assigned to USB3 Port 4" edit="true" visible="true" name="USB3 Port 4 PCIe Port 2 Mode" help_text="This soft strap sets the default value of the USB3 PCI Express Port2 Mode register that resides in the core well." />
+                </PchStrap9>
+                <PchStrap10 name="PCH Strap 10">
+                    <MeBootFromFlash value="false" edit="false" visible="true" name="ME boot from Flash" help_text="If true, ME will boot directly from Flash." />
+                    <Reserved value="false" edit="true" visible="true" name="Reserved" help_text="Intel Reserved. This is an unsupported setting and must be set to false." />
+                    <MeDbgSmbusEmergencyModeEn value="false" edit="true" visible="true" name="ME Debug SMBus Emergency Mode Enable" help_text="ME Debug SMBus Emergency Mode Help." />
+                    <MeDbgSmbusEmergencyModeAddr value="0x00" edit="true" visible="true" name="ME Debug SMBus Emergency Mode Address" help_text="'0' : the default address, 38h, is used for MDES writes non-zero : specifies the SMBus address used for MDES writes." />
+                    <MeDbgLanEmergencyModeEn value="false" edit="true" visible="true" name="ME Debug LAN Emergency Mode" help_text="This bit should be set to 'true' if it is desired to capture events with the ME Debug tool. This bit should be set to 'false' for production platforms." />
+                    <MeDebugExtendedDataEnable value="Disabled (default)" value_list="Disabled (default),,MDES data transmitted over SMBUS by boot path (including ROM)" edit="true" visible="true" name="ME Debug Extended Data Enable" help_text="ME MDES Extended Data enable" />
+                    <MeResetCapture value="false" edit="true" visible="true" name="ME Reset Capture on CLR_RST1#" help_text="true = ME will assert at the CL_RST1# when it resets.  false = ME does not assert." />
+                    <DeepSx value="false" edit="true" visible="true" name="Deep SX Enable" help_text="Deep SX refers to the low power states designated Deep S3, Deep S4, and Deep S5." />
+                    <FtpmStrapDisable value="No" value_list="No,,Yes" edit="true" visible="true" name="Intel (R) Platform Trust Technology Permanent Disable" help_text="Yes: PTT disabled. No: PTT enabled." />
+                </PchStrap10>
+                <PchStrap11 name="PCH Strap 11">
+                    <SmLink1I2cTargetAddressEnable value="false" edit="true" visible="true" name="SMLink1 I2C Target Address Enable" help_text="SmLink1 I2C Target Address Enabled" />
+                    <SmLink1I2cTargetAddress value="0x00" edit="true" visible="true" name="SMLink1 I2C Target Address" help_text="SmLink1 I2C Target Address" />
+                    <SmLink1GpAddrEn value="false" edit="true" visible="true" name="SMLink1 GP Target Address Enable" help_text="SmLink1 GP Target Address Enabled" />
+                    <SmLink1GpAddr value="0x00" edit="true" visible="true" name="SMLink1 GP Target Address" help_text="SmLink1 GP Target Address" />
+                </PchStrap11>
+                <PchStrap14 name="PCH Strap 14">
+                    <PCIeLaneReversal3 value="PCIe Port 6 Lane 0-3 are not reversed" value_list="PCIe Port 6 Lane 0-3 are not reversed,,PCIe Port 6 Lane 0-3 are reversed when Port 6 is configured as 1x4" edit="true" visible="true" name="PCIe Lane Reversal 3" help_text="Bit lane reversal behavior for PCIe Port 6 if configured as a x4 PCIe port." />
+                    <PciePortConfigStrap3 value="11: 1x4" value_list="00: 1x1,,10: 1x2,,11: 1x4" edit="true" visible="true" name="PCIe Port Configuration Strap 3" help_text="Set the default value of the PCI Express port Configuration 2 register covering PCIe port 6." />
+                    <PciePortConfigStrap2 value="11: 1x4" value_list="00: 1x1,,10: 1x2,,11: 1x4" edit="true" visible="true" name="PCIe Port Configuration Strap 2" help_text="Set the default value of the PCI Express port Configuration 2 register covering PCIe port 5." />
+                    <Sata0PcieP6L3Mode value="Statically assigned to SATA Port 0" value_list="Statically assigned to SATA Port 0,,Statically assigned to PCIe Port 6 Lane 3,,Assigned based on the native mode of GPIO34 pin" edit="true" visible="true" name="SATA Port 0 PCIe Port 6 Lane 3 Mode" help_text="Set SATA Port 0 PCIe Port 6 Lane 3 Mode. If the native mode of GIPO34 pin is a '1', then it is assigned to SATA Port 0, else it is assigned to PCIe Port 6 Lane 3." />
+                    <Sata1PcieP6L2Mode value="Statically assigned to SATA Port 1" value_list="Statically assigned to SATA Port 1,,Statically assigned to PCIe Port 6 Lane 2,,Assigned based on the native mode of GPIO35 pin" edit="true" visible="true" name="SATA Port 1 PCIe Port 6 Lane 2 Mode" help_text="Set SATA Port 1 PCIe Port 6 Lane 2 Mode. If the native mode of GIPO35 pin is a '1', then it is assigned to SATA Port 1, else it is assigned to PCIe Port 6 Lane 2." />
+                    <Sata2PcieP6L1Mode value="Statically assigned to SATA Port 2" value_list="Statically assigned to SATA Port 2,,Statically assigned to PCIe Port 6 Lane 1,,Assigned based on the native mode of GPIO36 pin" edit="true" visible="true" name="SATA Port 2 PCIe Port 6 Lane 1 Mode" help_text="Set SATA Port 2 PCIe Port 6 Lane 1 Mode. If the native mode of GIPO36 pin is a '1', then it is assigned to SATA Port 2, else it is assigned to PCIe Port 6 Lane 1." />
+                    <Sata3PcieP6L0Mode value="Assigned based on the native mode of GPIO37 pin" value_list="Statically assigned to SATA Port 3,,Statically assigned to PCIe Port 6 Lane 0,,Assigned based on the native mode of GPIO37 pin" edit="true" visible="true" name="SATA Port 3 PCIe Port 6 Lane 0 Mode" help_text="Set SATA Port 3 PCIe Port 6 Lane 0 Mode. If the native mode of GIPO37 pin is a '1', then it is assigned to SATA Port 3, else it is assigned to PCIe Port 6 Lane 0." />
+                    <BackboneClkSrcSelect value="OPI PLL is the source" value_list="OPI PLL is the source,,PCIe PLL is the source" edit="true" visible="true" name="Backbone Clock Source Select" help_text="Select the Backbone Clock Source" />
+                    <PcieNandSelect value="NAND Cycle Router configured for PCIe NAND x2" value_list="NAND Cycle Router configured for PCIe NAND x1,,NAND Cycle Router configured for PCIe NAND x2" edit="true" visible="true" name="PCIe NAND x1 or x2 Select" help_text="Select NAND cycle Router configuration for PCIe" />
+                </PchStrap14>
+                <PchStrap15 name="PCH Strap 15">
+                    <T205bTimer value="t205b timer is disabled" value_list="t205b timer is disabled,,PCH will count 99ms from PWROK assertion before PLTRST# is de-asserted" edit="true" visible="true" name="PCIe Power Stable Timer Enable" help_text="Platform is required to ensure timing of PWROK and SYS_PWROK in such a way that it satisfies the PCIe timing requirement of power stable to reset de-assertion." />
+                    <SlpWlanGpio29Sel value="false" edit="true" visible="true" name="SLP_WLAN# or GPIO29 Select" help_text="false = GPIO29 can only be used as SLP_WLAN#. true = GPIO29 is available for GPIO configuration" />
+                    <T1001Timing value="1 ms" value_list="1 ms,,30 us,,5 ms,,2 ms" edit="true" visible="true" name="t1001 Timing" help_text="t1001 timing is the min timing from CPUPWRGD assertion to SUS_STAT#" />
+                    <T573Timing value="1 ms" value_list="100 ms,,50 ms,,5 ms,,1 ms" edit="true" visible="true" name="t573 Timing" help_text="t573 timing is the min timing from XCK_PLL locked to CPUPWRGD high" />
+                </PchStrap15>
+                <PchStrap17 name="PCH Strap 17">
+                    <IcBtSoftStrp value="Full Clock Integrated Mode" value_list="Full Clock Integrated Mode,,Buffered Through Mode" edit="true" visible="true" name="BTM/FCIM Select" help_text="If PCH clock boot mode is specified by this soft strap, then this parameter specifies whether PCH clocks boot in FCIM or BTM." />
+                </PchStrap17>
+            </PchStraps>
+            <VsccTable name="VSCC Table">
+                <MeVsccDevice value="AT26DF321">
+                    <VendorId value="0x1F" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID." />
+                    <DeviceId0 value="0x47" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID." />
+                    <DeviceId1 value="0x00" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID." />
+                </MeVsccDevice>
+                <MeVsccDevice value="W25Q64BV">
+                    <VendorId value="0xEF" edit="true" visible="true" name="Vendor ID" help_text="The vendor specific byte of the JEDEC ID." />
+                    <DeviceId0 value="0x40" edit="true" visible="true" name="Device ID 0" help_text="The first device specific byte of the JEDEC ID." />
+                    <DeviceId1 value="0x17" edit="true" visible="true" name="Device ID 1" help_text="The second device specific byte of the JEDEC ID." />
+                </MeVsccDevice>
+            </VsccTable>
+            <OemSection name="OEM Section">
+                <InputFile value="" edit="true" visible="true" name="OEM Section Binary input file" help_text="The contents of this file (up to 256 bytes) are copied directly into the OEM section of the Flash Descriptor." />
+            </OemSection>
+        </Region0>
+        <Region1 name="BIOS Region">
+            <Enabled value="true" edit="false" visible="false" name="BIOS region enabled" help_text="" />
+            <RegionLength value="0x00000000" edit="true" visible="true" name="BIOS region length" help_text="This is the size of the BIOS region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF." />
+            <InputFile value="" edit="true" visible="true" name="BIOS binary input file" help_text="This is the BIOS image binary that will be copied into this region." />
+        </Region1>
+        <Region3 name="GbE Region">
+            <Enabled value="true" edit="false" visible="false" name="GbE region enabled" help_text="" />
+            <RegionLength value="0x00000000" edit="true" visible="true" name="GbE LAN region length" help_text="This is the size of the GbE LAN region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF." />
+            <InputFile value="" edit="true" visible="true" name="GbE binary input file" help_text="This is the Gbe image binary that will be copied into this region." />
+            <LANEn value="false" edit="false" visible="true" name="Intel (R) Integrated LAN Enable" help_text="Intel (R) Integrated LAN related PCH Straps are set up automatically according to this setting." />
+        </Region3>
+        <Region4 name="PDR Region">
+            <Enabled value="false" edit="false" visible="false" name="PDR region enabled" help_text="" />
+            <RegionLength value="0x00000000" edit="true" visible="true" name="PDR region length" help_text="This is the size of the PDR region in bytes. Set this to zero and specify an input file if you want the tool to determine the appropriate size for the region." />
+            <InputFile value="" edit="true" visible="true" name="PDR binary input file" help_text="This is the PDR image binary that will be copied into this region." />
+        </Region4>
+        <Region2 name="ME Region">
+            <Enabled value="true" edit="false" visible="false" name="ME region enabled" help_text="" />
+            <RegionLength value="0x00000000" edit="true" visible="false" name="ME region length" help_text="This is the size of the ME region in bytes. Set this to 0 to make the region length equal to the binary file length (rounded up to 4k). Extra space will be filled with 0xFF." />
+            <InputFile value="" edit="true" visible="true" name="ME Binary Input File" help_text="This is the path to a binary file that will be used for the ME region." />
+            <WcodChosen value="None" value_list="" edit="false" visible="false" name="WCOD Id" help_text="Determines which wireless LAN micro code will be supported in the firmware image" />
+            <LoclChosen value="None" value_list="" edit="false" visible="false" name="LOCL Id" help_text="Determines which localized language data will be used by the firmware for the secure output screens (Examples: SOL / KVM)" />
+            <Configuration name="Configuration">
+                <ME name="ME">
+                    <FwuOemId value="00000000-0000-0000-0000-000000000000" edit="true" visible="true" name="FW Update OEM ID" help_text="Enter UUID or file containing the UUID.  This UUID will make sure that customers can only update a platform with an image coming from the OEM of the platform.  If set to zero than any input is valid (including none) when doing a FW update." />
+                    <LanPowerWell value="3" value_list="0,,1,,2,,3" edit="true" visible="true" name="LAN Power Well Config" help_text="0 = Core Well, 1 = Sus Well, 2 = ME Well, 3 = SLP_LAN# (MGPIO3)" />
+                    <WlanPowerWell value="0x86" value_list="0x80,,0x82,,0x83,,0x84,,0x86" edit="true" visible="true" name="WLAN Power Well Config" help_text="0x80 = Disabled, 0x82 = Sus Well, 0x83 = ME Well, 0x84 = WLAN Power Controlled via SLP_M# || SPDA, 0x86 = WLAN Sleep via SLP_WLAN#" />
+                    <M3PwrRailAvail value="true" edit="true" visible="true" name="M3 Power Rails Availability" help_text="false = Not Available, true = Available" />
+                    <HostMeRegUnlock value="true" edit="true" visible="true" name="Host ME Region Flash Protection Override" help_text="Set this to TRUE if you want the ability to have BIOS write to the ME Region. Set to FALSE to opt out." />
+                    <ProcMissing value="No onboard glue logic" value_list="No onboard glue logic,,Glue logic tied to GPIO24" edit="false" visible="true" name="PROC_MISSING" help_text="This value will determine if there is glue logic present on the platform to detect a missing processor on desktop platforms." />
+                    <ProcEmulation value="No Emulation" value_list="No Emulation,,EMULATE Intel (R) vPro (TM) capable Processor,,EMULATE Intel (R) Core (TM) branded Processor,,EMULATE Intel (R) Celeron (R) branded Processor,,EMULATE Intel (R) Pentium (R) branded Processor,,EMULATE Intel (R) Xeon (R) branded Processor,,EMULATE Intel (R) Xeon (R) Manageability capable Processor" edit="true" visible="true" name="Processor Emulation" help_text="This gives the option to emulate different Intel ME FW behavior by changing the processor type on pre-production silicon. This field has no effect on production silicon." />
+                    <OemTag value="0x00000000" edit="true" visible="true" name="OEM Tag" help_text="An OEM identification number to describe the flash image represented by the value." />
+                    <HideFwUpdCtrl value="false" edit="true" visible="true" name="Hide FW Update Control" help_text="Setting this parameter to 'true' will not allow end users to 'disable' or 'password protect' the ME FW Update mechanism" />
+                    <DbgSiFeat value="0x00000000" edit="true" visible="true" name="Debug Si Features" help_text="Allows OEM control to enable FW features to assist with debug of the platform.  This control has no effect if used on production silicon." />
+                    <ProdSiFeat value="0x00000000" edit="true" visible="true" name="Prod Si Features" help_text="Allows OEM control to enable FW features to assist with production of the platform." />
+                    <AutoBist value="false" edit="true" visible="true" name="M3 Autotest Enabled" help_text="This enables ME M3 auto test during platform early boot." />
+                    <IfrEnabled value="false" edit="true" visible="true" name="Independent Firmware Recovery Enable" help_text="This allows firmware to be updated via locally installed agent software." />
+                </ME>
+                <ManageApp name="Manageability Application">
+                    <BiosSetupCapable value="false" edit="true" visible="true" name="Boot into BIOS Setup Capable" help_text="false = Not Capable, true = Capable" />
+                    <BiosBootCapable value="false" edit="true" visible="true" name="Pause during BIOS Boot Capable" help_text="false = Not Capable, true = Capable" />
+                    <BiosSecureBoot value="true" edit="true" visible="true" name="Enable Enforce Secure Boot over IDER" help_text="false = Disabled, true = Enabled. Enabling this option will advertise support for the enforcement of Secure Boot Over IDER capability as provided by the BIOS." />
+                    <BiosReflashCapable value="false" edit="true" visible="true" name="BIOS Reflash Capable" help_text="false = Not Capable, true = Capable" />
+                    <UsbrEhci1 value="11b Enabled" value_list="10b Disabled,,11b Enabled" edit="true" visible="true" name="USBr EHCI 1 Enabled" help_text="USBr EHCI 1 Enabled Setting." />
+                    <UsbrEhci2 value="10b Disabled" value_list="10b Disabled,,11b Enabled" edit="true" visible="true" name="USBr EHCI 2 Enabled" help_text="USBr EHCI 2 Enabled Setting." />
+                    <PrivacySecurityLevel value="Default" value_list="Default,,Enhanced,,Extreme" edit="true" visible="true" name="Privacy/Security Level" help_text="Configures ME redirection ports. Default - enables Client Control mode, enables all ports and RCFG, Enhanced - enables Client Control mode, RCFG and requires user consent for redirection, Extreme - disables Client Control mode, RCFG and disables redirection" />
+                    <MeIdleTimeout value="65535" edit="true" visible="true" name="AMT Idle Timeout" help_text="Set ME Remote Wake on LAN time out. Valid values are 1-65535." />
+                </ManageApp>
+                <FeaturesSupported name="Features Supported">
+                    <MngFullPerm value="No" value_list="No,,Yes" edit="true" visible="true" name="Enable Intel (R) Standard Manageability; Disable Intel (R) AMT" help_text="Permanently disables Intel (R) AMT" />
+                    <ManageAppPerm value="No" value_list="No,,Yes" edit="true" visible="true" name="Manageability Application Permanently Disabled?" help_text="Setting this to Yes permanently disables all manageability application features." />
+                    <PavPerm value="No" value_list="No,,Yes" edit="true" visible="true" name="PAVP Permanently Disabled?" help_text="Select whether Protected Audio Video Path (PAVP) is permanently disabled." />
+                    <KvmPerm value="No" value_list="No,,Yes" edit="true" visible="true" name="KVM Permanently Disabled?" help_text="Select whether KVM is permanently disabled." />
+                    <TlsPerm value="No" value_list="No,,Yes" edit="true" visible="true" name="TLS Permanently Disabled?" help_text="Select whether TLS is permanently disabled." />
+                    <ATPerm value="No" value_list="No,,Yes" edit="true" visible="true" name="Intel (R) Anti-Theft Technology Permanently Disabled?" help_text="Select whether Intel (R) Anti-Theft Technology is permanently disabled." />
+                    <MeNetworkService value="No" value_list="No,,Yes" edit="true" visible="true" name="Intel (R) ME Network Service Permanently Disabled?" help_text="Select whether Intel (R) ME Network Service is permanently disabled." />
+                    <ManageAppShipState value="Enabled" value_list="Enabled,,Disabled" edit="true" visible="true" name="Manageability Application Enable/Disable" help_text="Select whether or not Manageability Application is enabled or disabled." />
+                    <fTpmShipState value="Enabled" value_list="Enabled,,Disabled" edit="true" visible="true" name="Intel (R) Platform Trust Technology Enable/Disable" help_text="This enables Intel (R) Platform Trust Technology if the corresponding softstrap is enabled and Enable Intel (R) Platform Trust Technology is enabled." />
+                </FeaturesSupported>
+                <Nfc name="Intel (R) NFC Capabilities">
+                    <NfcActive value="false" edit="true" visible="true" name="Near Field Communication Enabled" help_text="This setting determines whether Near Field Communication is enabled." />
+                    <NfcSlaveAddress value="0x28-NXP" value_list="0x28-NXP,,0x29-NXP,,0x2A-NXP,,0x2B-NXP" edit="true" visible="true" name="SMBus Address" help_text="This SMBus address should match the SMBus Address on the NFC hardware device." />
+                    <NfcAlertGpio value="GPIO26" value_list="GPIO26,,GPIO73" edit="true" visible="true" name="Active GPIO" help_text="This setting determines the GPIO NFC will use." />
+                </Nfc>
+                <SetupConfig name="Setup and Configuration">
+                    <UpgrdSrvcOdmId value="0x00000000" edit="true" visible="true" name="ODM ID used by Intel (R) Services" help_text="ID generated by or registered with Intel (R) Services web servers in order to identify the ODM/Board builder.  First of three IDs stored in flash and accessible through Intel (R) MEI interface." />
+                    <UpgrdSrvcSysIntId value="0x00000000" edit="true" visible="true" name="System Integrator ID used by Intel (R) Services" help_text="ID generated by or registered with Intel (R) Services web servers in order to identify the System Integrator.  Second of three IDs stored in flash and accessible through Intel (R) MEI interface." />
+                    <UpgrdSrvcRsvdId value="0x00000000" edit="true" visible="true" name="Reserved ID used by Intel (R) Services" help_text="Reserved ID may be used for a Reseller ID or other Intel (R) Services IDs in the future." />
+                    <MctpStaticEid0 value="0x00" edit="true" visible="true" name="MCTP Static EIDs" help_text="Defines the ME's 8-bits MCTP Endpoint IDs for each SMBus physical interface (SMBus, SMLink0 and SMLink1). These values are needed for FW to communicate with MCTP end points. For each of these 3 bytes, a value of 0x00 means not used, and values 0xFF or 0x01 - 0x07 or 0x20 - 0x2F are not allowed." />
+                    <MctpStaticEid1 value="0x00" edit="true" visible="true" name="MCTP Static EIDs" help_text="Defines the ME's 8-bits MCTP Endpoint IDs for each SMBus physical interface (SMBus, SMLink0 and SMLink1). These values are needed for FW to communicate with MCTP end points. For each of these 3 bytes, a value of 0x00 means not used, and values 0xFF or 0x01 - 0x07 or 0x20 - 0x2F are not allowed." />
+                    <MctpStaticEid2 value="0x00" edit="true" visible="true" name="MCTP Static EIDs" help_text="Defines the ME's 8-bits MCTP Endpoint IDs for each SMBus physical interface (SMBus, SMLink0 and SMLink1). These values are needed for FW to communicate with MCTP end points. For each of these 3 bytes, a value of 0x00 means not used, and values 0xFF or 0x01 - 0x07 or 0x20 - 0x2F are not allowed." />
+                    <PermitTimerResolution value="Days" value_list="Days,,Minutes" edit="true" visible="true" name="Permit Period Timer Resolution" help_text="This setting determines what the permit period timer resolution will be." />
+                    <PkiDnsSuffix value="" edit="true" visible="true" name="PKI DNS Suffix" help_text="Set PKI DNS Suffix in dotted string format." />
+                    <Hash19 name="OEM Default Certificate">
+                        <Active value="false" edit="true" visible="true" name="OEM Default Certificate Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Default Certificate Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Default Certificate Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash19>
+                    <Hash20 name="OEM Customizable Certificate 1">
+                        <Active value="false" edit="true" visible="true" name="OEM Customizable Certificate 1 Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Customizable Certificate 1 Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Customizable Certificate 1 Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash20>
+                    <Hash21 name="OEM Customizable Certificate 2">
+                        <Active value="false" edit="true" visible="true" name="OEM Customizable Certificate 2 Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Customizable Certificate 2 Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Customizable Certificate 2 Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash21>
+                    <Hash22 name="OEM Customizable Certificate 3">
+                        <Active value="false" edit="true" visible="true" name="OEM Customizable Certificate 3 Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Customizable Certificate 3 Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Customizable Certificate 3 Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash22>
+                    <Hash23 name="OEM Default Certificate 2">
+                        <Active value="false" edit="true" visible="true" name="OEM Default Certificate 2 Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Default Certificate 2 Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Default Certificate 2 Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash23>
+                    <Hash24 name="OEM Default Certificate 3">
+                        <Active value="false" edit="true" visible="true" name="OEM Default Certificate 3 Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Default Certificate 3 Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Default Certificate 3 Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash24>
+                    <Hash25 name="OEM Default Certificate 4">
+                        <Active value="false" edit="true" visible="true" name="OEM Default Certificate 4 Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Default Certificate 4 Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Default Certificate 4 Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash25>
+                    <Hash26 name="OEM Default Certificate 5">
+                        <Active value="false" edit="true" visible="true" name="OEM Default Certificate 5 Active" help_text="false = Not Active  true = Active" />
+                        <FriendlyName value="" edit="true" visible="true" name="OEM Default Certificate 5 Friendly Name" help_text="Enter Hash Name.  Maximum of 32 characters." />
+                        <Stream value="" edit="true" visible="true" name="OEM Default Certificate 5 Stream" help_text="Enter raw hash string or certificate file." />
+                    </Hash26>
+                    <EhbcEnabled value="false" edit="true" visible="true" name="Embedded Host Based Configuration" help_text="Embedded Host Based Configuration Enabled. If this is set to true, then Privacy/Security Level will be read-only and set to Default.   If Privacy/Security Level is set to non-Default, then this setting will be read-only and set to false." />
+                </SetupConfig>
+                <AT name="Intel (R) Anti-Theft Technology">
+                    <AllowUnsignedAssertStolen value="false" edit="true" visible="true" name="Allow Unsigned Assert Stolen" help_text="true = Unsigned Assert Stolen is enabled. false = The Unsigned Assert Stolen is disabled." />
+                    <ATBiosRcvryTimer value="Disabled" value_list="Disabled,,Enabled" edit="true" visible="true" name="Intel (R) Anti-Theft BIOS Recovery Timer" help_text="This timer will enable a stolen platform a 30 minute window to allow a FW/BIOS reflash before the system is powered down." />
+                    <ATFpopHard value="Allowed When AT Not Provisioned" value_list="Always Allowed,,Allowed When AT Not Provisioned" edit="true" visible="true" name="Flash Protection Override Policy Hard" help_text="Indicates under which AT conditions it is allowed for ME to enter disabled state to allow full SPI device re-flashing when the HMRFPO is set." />
+                    <ATFpopSoft value="Allowed When AT Not Provisioned" value_list="Always Allowed,,Allowed When AT Not Provisioned" edit="true" visible="true" name="Flash Protection Override Policy Soft" help_text="Indicates under which AT conditions it is allowed for ME to enter disabled state via BIOS based MEI messages and allow ME only region re-flash." />
+                </AT>
+                <BootGuard name="Boot Guard">
+                    <PublicKeyHash value="" edit="true" visible="true" name="OEM Public Key Hash" help_text="Enter raw hash string or certificate file. This is a 256-bit field represents the SHA-256 hash of OEM public key corresponding to the private key used to sign the BIOS-SM." />
+                    <KeyManifestId value="0x0" edit="true" visible="true" name="Key Manifest ID" help_text="Contains the hash of another public key, used by the ACM to verify the Boot Policy Manifest." />
+                    <BGProfile value="Boot Guard Profile 0 - No_FVME" value_list="Boot Guard Profile 0 - No_FVME,,Boot Guard Profile 1 - VE,,Boot Guard Profile 2 - VME,,Boot Guard Profile 3 - VM,,Boot Guard Profile 4 - FVE,,Boot Guard Profile 5 - FVME" edit="true" visible="true" name="Boot Guard Profile Configuration" help_text="Choose the Boot Guard Profile." />
+                    <CpuDebugDis value="false" edit="true" visible="true" name="CPU Debug Disabled" help_text="false: do not disable any CPU debug modes. true: disable CPU debug modes." />
+                    <BspInitDis value="false" edit="true" visible="true" name="BSP Initialization Disabled" help_text="false: if BSP receives an INIT, BSP handles it normally. true: if BST receives an INIT, BST signals an error to the BSS register and enters unrecoverable shutdown." />
+                </BootGuard>
+                <PlatformTrust name="Intel (R) Platform Trust Technology">
+                    <PttFpfEnable value="Enabled" value_list="Enabled,,Disabled" edit="true" visible="true" name="Intel PTT HW Enable/Disable" help_text="Enabled: PTT FPF setting set to enabled. Setting is committed at EOM. Disabled: PTT FPF setting set to disabled. Setting is commited at EOM." />
+                </PlatformTrust>
+                <MDES name="ME Debug Event Service">
+                    <ErrorFilter value="Critical" value_list="All,,Low/High/Critical,,High/Critical,,Critical" edit="true" visible="true" name="Error Filter" help_text="Set the error filter" />
+                    <LoggingInt value="Flash" value_list="Disabled,,Network,,SMBus,,Flash,,PRAM,,SVT" edit="true" visible="true" name="Logging Interface" help_text="Set the logging interface to the interface to be used or disabled to have no logging interface.  WARNING: Changing this setting (by hitting OK in the UI) will reset the Event Filters!  They will be set to the default event filter settings for the chosen logging interface."/>
+                    <BufferSize value="1" edit="true" visible="true" name="Buffer Size" help_text="Set the buffer size 0-32. Only when logging is set to disabled can this be set to 0." />
+                    <BufferMode value="Blocking" value_list="Blocking,,Buffered,,Delayed Flush,,Deferred PG" edit="true" visible="true" name="Buffer Mode" help_text="Select the MDES Buffer Mode." />
+                    <SrcIpAddr value="10.2.0.2" edit="true" visible="true" name="Source IP Address" help_text="IPv4 Source Address" />
+                    <DestIpAddr value="10.2.0.255" edit="true" visible="true" name="Destination IP Address" help_text="IPv4 Destination Address" />
+                    <MacAddr value="0C FF 17 22 FF 2D" edit="true" visible="true" name="Destination MAC Address" help_text="Enter a MAC Address for the destination" />
+                    <SlaveAddr value="0x00" edit="true" visible="true" name="Slave Address" help_text="Slave Address" />
+                    <EventFilters>
+                        <FilterGroup0 value="0x00000000" edit="true" visible="true" name="Filter Group 0" help_text="" />
+                        <FilterGroup1 value="0x00000001" edit="true" visible="true" name="Filter Group 1" help_text="" />
+                        <FilterGroup2 value="0x00000000" edit="true" visible="true" name="Filter Group 2" help_text="" />
+                        <FilterGroup3 value="0x00000000" edit="true" visible="true" name="Filter Group 3" help_text="" />
+                        <FilterGroup4 value="0x00000000" edit="true" visible="true" name="Filter Group 4" help_text="" />
+                        <FilterGroup5 value="0x00000000" edit="true" visible="true" name="Filter Group 5" help_text="" />
+                        <FilterGroup6 value="0x00000000" edit="true" visible="true" name="Filter Group 6" help_text="" />
+                        <FilterGroup7 value="0x00000000" edit="true" visible="true" name="Filter Group 7" help_text="" />
+                        <FilterGroup8 value="0x00000000" edit="true" visible="true" name="Filter Group 8" help_text="" />
+                        <FilterGroup9 value="0x00000000" edit="true" visible="true" name="Filter Group 9" help_text="" />
+                        <FilterGroup10 value="0x00000000" edit="true" visible="true" name="Filter Group 10" help_text="" />
+                        <FilterGroup11 value="0x00000000" edit="true" visible="true" name="Filter Group 11" help_text="" />
+                        <FilterGroup12 value="0x00000000" edit="true" visible="true" name="Filter Group 12" help_text="" />
+                        <FilterGroup13 value="0x00000000" edit="true" visible="true" name="Filter Group 13" help_text="" />
+                        <FilterGroup14 value="0x00000000" edit="true" visible="true" name="Filter Group 14" help_text="" />
+                        <FilterGroup15 value="0x00000000" edit="true" visible="true" name="Filter Group 15" help_text="" />
+                        <FilterGroup16 value="0x00000000" edit="true" visible="true" name="Filter Group 16" help_text="" />
+                        <FilterGroup17 value="0x00000000" edit="true" visible="true" name="Filter Group 17" help_text="" />
+                        <FilterGroup18 value="0x00000000" edit="true" visible="true" name="Filter Group 18" help_text="" />
+                        <FilterGroup19 value="0x00000000" edit="true" visible="true" name="Filter Group 19" help_text="" />
+                        <FilterGroup20 value="0x00000000" edit="true" visible="true" name="Filter Group 20" help_text="" />
+                        <FilterGroup21 value="0x00000000" edit="true" visible="true" name="Filter Group 21" help_text="" />
+                        <FilterGroup22 value="0x00000000" edit="true" visible="true" name="Filter Group 22" help_text="" />
+                        <FilterGroup23 value="0x00000000" edit="true" visible="true" name="Filter Group 23" help_text="" />
+                        <FilterGroup24 value="0x00000000" edit="true" visible="true" name="Filter Group 24" help_text="" />
+                        <FilterGroup25 value="0x00000000" edit="true" visible="true" name="Filter Group 25" help_text="" />
+                        <FilterGroup26 value="0x00000000" edit="true" visible="true" name="Filter Group 26" help_text="" />
+                        <FilterGroup27 value="0x00000000" edit="true" visible="true" name="Filter Group 27" help_text="" />
+                        <FilterGroup28 value="0x00000000" edit="true" visible="true" name="Filter Group 28" help_text="" />
+                        <FilterGroup29 value="0x00000000" edit="true" visible="true" name="Filter Group 29" help_text="" />
+                        <FilterGroup30 value="0x00000000" edit="true" visible="true" name="Filter Group 30" help_text="" />
+                        <FilterGroup31 value="0x00000000" edit="true" visible="true" name="Filter Group 31" help_text="" />
+                        <FilterGroup32 value="0x00000000" edit="true" visible="true" name="Filter Group 32" help_text="" />
+                        <FilterGroup33 value="0x00000000" edit="true" visible="true" name="Filter Group 33" help_text="" />
+                        <FilterGroup34 value="0x00000000" edit="true" visible="true" name="Filter Group 34" help_text="" />
+                        <FilterGroup35 value="0x00000000" edit="true" visible="true" name="Filter Group 35" help_text="" />
+                        <FilterGroup36 value="0x00000000" edit="true" visible="true" name="Filter Group 36" help_text="" />
+                        <FilterGroup37 value="0x00000000" edit="true" visible="true" name="Filter Group 37" help_text="" />
+                        <FilterGroup38 value="0x00000000" edit="true" visible="true" name="Filter Group 38" help_text="" />
+                        <FilterGroup39 value="0x00000000" edit="true" visible="true" name="Filter Group 39" help_text="" />
+                        <FilterGroup40 value="0x00000000" edit="true" visible="true" name="Filter Group 40" help_text="" />
+                        <FilterGroup41 value="0x00000000" edit="true" visible="true" name="Filter Group 41" help_text="" />
+                        <FilterGroup42 value="0x00000000" edit="true" visible="true" name="Filter Group 42" help_text="" />
+                        <FilterGroup43 value="0x00000000" edit="true" visible="true" name="Filter Group 43" help_text="" />
+                        <FilterGroup44 value="0x00000000" edit="true" visible="true" name="Filter Group 44" help_text="" />
+                        <FilterGroup45 value="0x00000000" edit="true" visible="true" name="Filter Group 45" help_text="" />
+                        <FilterGroup46 value="0x00000000" edit="true" visible="true" name="Filter Group 46" help_text="" />
+                        <FilterGroup47 value="0x00000000" edit="true" visible="true" name="Filter Group 47" help_text="" />
+                        <FilterGroup48 value="0x00000000" edit="true" visible="true" name="Filter Group 48" help_text="" />
+                        <FilterGroup49 value="0x00000000" edit="true" visible="true" name="Filter Group 49" help_text="" />
+                        <FilterGroup50 value="0x00000000" edit="true" visible="true" name="Filter Group 50" help_text="" />
+                        <FilterGroup51 value="0x00000000" edit="true" visible="true" name="Filter Group 51" help_text="" />
+                        <FilterGroup52 value="0x00000000" edit="true" visible="true" name="Filter Group 52" help_text="" />
+                        <FilterGroup53 value="0x00000000" edit="true" visible="true" name="Filter Group 53" help_text="" />
+                        <FilterGroup54 value="0x00000000" edit="true" visible="true" name="Filter Group 54" help_text="" />
+                        <FilterGroup55 value="0x00000000" edit="true" visible="true" name="Filter Group 55" help_text="" />
+                        <FilterGroup56 value="0x00000000" edit="true" visible="true" name="Filter Group 56" help_text="" />
+                        <FilterGroup57 value="0x00000000" edit="true" visible="true" name="Filter Group 57" help_text="" />
+                        <FilterGroup58 value="0x00000000" edit="true" visible="true" name="Filter Group 58" help_text="" />
+                        <FilterGroup59 value="0x00000000" edit="true" visible="true" name="Filter Group 59" help_text="" />
+                        <FilterGroup60 value="0x00000000" edit="true" visible="true" name="Filter Group 60" help_text="" />
+                        <FilterGroup61 value="0x00000000" edit="true" visible="true" name="Filter Group 61" help_text="" />
+                        <FilterGroup62 value="0x00000000" edit="true" visible="true" name="Filter Group 62" help_text="" />
+                        <FilterGroup63 value="0x00000000" edit="true" visible="true" name="Filter Group 63" help_text="" />
+                        <FilterGroup64 value="0x00000000" edit="true" visible="true" name="Filter Group 64" help_text="" />
+                        <FilterGroup65 value="0x00000000" edit="true" visible="true" name="Filter Group 65" help_text="" />
+                        <FilterGroup66 value="0x00000000" edit="true" visible="true" name="Filter Group 66" help_text="" />
+                        <FilterGroup67 value="0x00000000" edit="true" visible="true" name="Filter Group 67" help_text="" />
+                        <FilterGroup68 value="0x00000000" edit="true" visible="true" name="Filter Group 68" help_text="" />
+                        <FilterGroup69 value="0x00000000" edit="true" visible="true" name="Filter Group 69" help_text="" />
+                        <FilterGroup70 value="0x00000000" edit="true" visible="true" name="Filter Group 70" help_text="" />
+                        <FilterGroup71 value="0x00000000" edit="true" visible="true" name="Filter Group 71" help_text="" />
+                        <FilterGroup72 value="0x00000000" edit="true" visible="true" name="Filter Group 72" help_text="" />
+                        <FilterGroup73 value="0x00000000" edit="true" visible="true" name="Filter Group 73" help_text="" />
+                        <FilterGroup74 value="0x00000000" edit="true" visible="true" name="Filter Group 74" help_text="" />
+                        <FilterGroup75 value="0x00000000" edit="true" visible="true" name="Filter Group 75" help_text="" />
+                        <FilterGroup76 value="0x000000FE" edit="true" visible="true" name="Filter Group 76" help_text="" />
+                        <FilterGroup77 value="0x00000000" edit="true" visible="true" name="Filter Group 77" help_text="" />
+                        <FilterGroup78 value="0x00000000" edit="true" visible="true" name="Filter Group 78" help_text="" />
+                        <FilterGroup79 value="0x00000000" edit="true" visible="true" name="Filter Group 79" help_text="" />
+                        <FilterGroup80 value="0x00000000" edit="true" visible="true" name="Filter Group 80" help_text="" />
+                        <FilterGroup81 value="0x00000000" edit="true" visible="true" name="Filter Group 81" help_text="" />
+                        <FilterGroup82 value="0x00000000" edit="true" visible="true" name="Filter Group 82" help_text="" />
+                        <FilterGroup83 value="0x00000000" edit="true" visible="true" name="Filter Group 83" help_text="" />
+                        <FilterGroup84 value="0x00000000" edit="true" visible="true" name="Filter Group 84" help_text="" />
+                        <FilterGroup85 value="0x00000000" edit="true" visible="true" name="Filter Group 85" help_text="" />
+                        <FilterGroup86 value="0x00000000" edit="true" visible="true" name="Filter Group 86" help_text="" />
+                        <FilterGroup87 value="0x00000000" edit="true" visible="true" name="Filter Group 87" help_text="" />
+                        <FilterGroup88 value="0x00000000" edit="true" visible="true" name="Filter Group 88" help_text="" />
+                        <FilterGroup89 value="0x00000000" edit="true" visible="true" name="Filter Group 89" help_text="" />
+                        <FilterGroup90 value="0x00000000" edit="true" visible="true" name="Filter Group 90" help_text="" />
+                        <FilterGroup91 value="0x00000000" edit="true" visible="true" name="Filter Group 91" help_text="" />
+                        <FilterGroup92 value="0x00000000" edit="true" visible="true" name="Filter Group 92" help_text="" />
+                        <FilterGroup93 value="0x00000000" edit="true" visible="true" name="Filter Group 93" help_text="" />
+                        <FilterGroup94 value="0x00000000" edit="true" visible="true" name="Filter Group 94" help_text="" />
+                        <FilterGroup95 value="0x00000000" edit="true" visible="true" name="Filter Group 95" help_text="" />
+                        <FilterGroup96 value="0x00000000" edit="true" visible="true" name="Filter Group 96" help_text="" />
+                        <FilterGroup97 value="0x00000000" edit="true" visible="true" name="Filter Group 97" help_text="" />
+                        <FilterGroup98 value="0x00000000" edit="true" visible="true" name="Filter Group 98" help_text="" />
+                        <FilterGroup99 value="0x00000000" edit="true" visible="true" name="Filter Group 99" help_text="" />
+                        <FilterGroup100 value="0x00000000" edit="true" visible="true" name="Filter Group 100" help_text="" />
+                        <FilterGroup101 value="0x00000000" edit="true" visible="true" name="Filter Group 101" help_text="" />
+                        <FilterGroup102 value="0x00000000" edit="true" visible="true" name="Filter Group 102" help_text="" />
+                        <FilterGroup103 value="0x00000000" edit="true" visible="true" name="Filter Group 103" help_text="" />
+                        <FilterGroup104 value="0x00000000" edit="true" visible="true" name="Filter Group 104" help_text="" />
+                        <FilterGroup105 value="0x00000000" edit="true" visible="true" name="Filter Group 105" help_text="" />
+                        <FilterGroup106 value="0x00000000" edit="true" visible="true" name="Filter Group 106" help_text="" />
+                        <FilterGroup107 value="0x00000000" edit="true" visible="true" name="Filter Group 107" help_text="" />
+                        <FilterGroup108 value="0x00000000" edit="true" visible="true" name="Filter Group 108" help_text="" />
+                        <FilterGroup109 value="0x00000000" edit="true" visible="true" name="Filter Group 109" help_text="" />
+                        <FilterGroup110 value="0x00000000" edit="true" visible="true" name="Filter Group 110" help_text="" />
+                        <FilterGroup111 value="0x00000000" edit="true" visible="true" name="Filter Group 111" help_text="" />
+                        <FilterGroup112 value="0x00000000" edit="true" visible="true" name="Filter Group 112" help_text="" />
+                        <FilterGroup113 value="0x00000000" edit="true" visible="true" name="Filter Group 113" help_text="" />
+                        <FilterGroup114 value="0x00000000" edit="true" visible="true" name="Filter Group 114" help_text="" />
+                        <FilterGroup115 value="0x00000000" edit="true" visible="true" name="Filter Group 115" help_text="" />
+                        <FilterGroup116 value="0x00000000" edit="true" visible="true" name="Filter Group 116" help_text="" />
+                        <FilterGroup117 value="0x00000000" edit="true" visible="true" name="Filter Group 117" help_text="" />
+                        <FilterGroup118 value="0x00000000" edit="true" visible="true" name="Filter Group 118" help_text="" />
+                        <FilterGroup119 value="0x00000000" edit="true" visible="true" name="Filter Group 119" help_text="" />
+                        <FilterGroup120 value="0x00000000" edit="true" visible="true" name="Filter Group 120" help_text="" />
+                        <FilterGroup121 value="0x00000000" edit="true" visible="true" name="Filter Group 121" help_text="" />
+                        <FilterGroup122 value="0x00000000" edit="true" visible="true" name="Filter Group 122" help_text="" />
+                        <FilterGroup123 value="0x00000000" edit="true" visible="true" name="Filter Group 123" help_text="" />
+                        <FilterGroup124 value="0x00000000" edit="true" visible="true" name="Filter Group 124" help_text="" />
+                        <FilterGroup125 value="0x00000000" edit="true" visible="true" name="Filter Group 125" help_text="" />
+                        <FilterGroup126 value="0x00000000" edit="true" visible="true" name="Filter Group 126" help_text="" />
+                        <FilterGroup127 value="0x00000000" edit="true" visible="true" name="Filter Group 127" help_text="" />
+                    </EventFilters>
+                </MDES>
+                <ChipsetInit value="" />
+                <IccData name="ICC Data">
+                    <Defaults>
+                        <Profile name="Standard"></Profile>
+                        <Profile name="WiMax3G" base="Standard">
+                            <HwRegisters>
+                                <SSCDIVINTPHASE_CPU100 value="0x00000333" />
+                                <SSCTRIPARAM_CPU100 value="0x9240B820" />
+                            </HwRegisters>
+                            <ClkRangeDefRecord clock="2" value="0x0000DF32A5B20D80"/>
+                        </Profile>
+                    </Defaults>
+                    <Custom>
+                        <Profile name="UserProfile" base="Standard" selected="TRUE" />
+                    </Custom>
+                    <LockMask value="0:Default" />
+                    <SelectedBy value="SoftStrap" />
+                </IccData>
+            </Configuration>
+        </Region2>
+    </Chipset>
+</ftoolRoot>

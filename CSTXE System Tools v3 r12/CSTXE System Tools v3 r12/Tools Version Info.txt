@@ -1,0 +1,25 @@
+Flash Image Tool (WIN32): 3.1.70.2340
+Flash Image Tool (LINUX64): 3.1.70.2340
+Flash Programming Tool (EFI32): 3.1.70.2340
+Flash Programming Tool (EFI64): 3.1.76.2360
+Flash Programming Tool (WIN32): 3.1.70.2340
+Flash Programming Tool (WIN64): 3.1.76.2360
+Flash Programming Tool (LINUX32): 3.1.70.2340
+Flash Programming Tool (LINUX64): 3.1.70.2340
+Flash Programming Tool (ANDROID64): 3.1.70.2340
+TXEInfo (EFI32): 3.1.70.2340
+TXEInfo (EFI64): 3.1.76.2360
+TXEInfo (WIN32): 3.1.70.2340
+TXEInfo (WIN64): 3.1.70.2340
+TXEInfo (LINUX32): 3.1.70.2340
+TXEInfo (LINUX64): 3.1.70.2340
+TXEInfo (ANDROID64): 3.1.70.2340
+TXEManuf (EFI32): 3.1.70.2340
+TXEManuf (EFI64): 3.1.76.2360
+TXEManuf (WIN32): 3.1.70.2340
+TXEManuf (WIN64): 3.1.76.2360
+TXEManuf (LINUX32): 3.1.70.2340
+TXEManuf (LINUX64): 3.1.70.2340
+TXEManuf (ANDROID64): 3.1.70.2340
+Manifest Extension Utility (WIN32): 3.1.70.2340
+Manifest Extension Utility (LINUX64): 3.1.70.2340

@@ -1,0 +1,22 @@
+Flash Image Tool (WIN32): 7.1.60.1191 ***
+Flash Image Tool (WIN32): 7.1.13.1088 ***
+Flash Programming Tool (DOS): 7.1.50.1166
+Flash Programming Tool (WIN32): 7.1.50.1166
+Flash Programming Tool (WIN64): 7.1.50.1166
+FWUpdate (DOS): 7.1.50.1166
+FWUpdate (WIN32): 7.1.50.1166
+FWUpdate (LINUX32): 7.1.91.3273
+FWUpdate (LINUX64): 7.1.91.3273
+MEInfo (DOS): 7.1.50.1166
+MEInfo (WIN32): 7.1.52.1180
+MEInfo (WIN64): 7.1.50.1166
+MEManuf (DOS): 7.1.50.1166
+MEManuf (WIN32): 7.1.50.1166
+MEManuf (WIN64): 7.1.50.1166
+Clock Commander Tool (DOS): 7.1.20.1119
+Clock Commander Tool (WIN32): 7.1.20.1119
+UpdParam (DOS): 7.1.50.1166
+IUSManufTool (DOS): 7.1.30.1141
+IUSManufTool (WIN32): 7.1.30.1141
+
+*** Before you use FITC, read the WARNING document first

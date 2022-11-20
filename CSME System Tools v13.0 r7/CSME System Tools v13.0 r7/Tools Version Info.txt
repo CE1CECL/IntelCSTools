@@ -1,0 +1,16 @@
+Flash Image Tool (WIN32): 13.0.37.1556
+Flash Programming Tool (EFI64): 13.0.37.1556
+Flash Programming Tool (WIN32): 13.0.37.1556
+Flash Programming Tool (WIN64): 13.0.37.1556
+FWUpdate (EFI64): 13.0.37.1556
+FWUpdate (WIN32): 13.0.47.1781
+FWUpdate (WIN64): 13.0.60.2101
+MEInfo (EFI64): 13.0.37.1556
+MEInfo (WIN32): 13.0.37.1556
+MEInfo (WIN64): 13.0.37.1556
+MEManuf (EFI64): 13.0.37.1556
+MEManuf (WIN32): 13.0.37.1556
+MEManuf (WIN64): 13.0.37.1556
+Clock Commander Tool (EFI64): 13.0.20.1312
+Clock Commander Tool (WIN32): 13.0.20.1312
+Manifest Extension Utility (WIN32): 13.0.37.1556

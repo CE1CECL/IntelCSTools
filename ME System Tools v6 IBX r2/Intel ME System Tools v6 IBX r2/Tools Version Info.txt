@@ -1,0 +1,16 @@
+Flash Image Tool: 6.0.40.1212 ***
+Flash Programming Tool(DOS): 6.1.20.1057
+Flash Programming Tool(Windows): 6.0.40.1214
+FWUpdate(DOS): 6.2.0.1022 **
+FWUpdate(LINUX32): 6.2.60.3536 **
+FWUpdate(LINUX64): 6.2.60.3536 **
+FWUpdate(Windows): 6.2.0.1022 **
+MEInfo(DOS): 6.2.60.3535
+MEInfo(Windows): 6.2.60.3535
+MEManuf(DOS): 6.0.40.1214
+MEManuf(Windows): 6.0.40.1214
+UpdParam(DOS): 6.0.40.1212
+NANDUtil(DOS): 0.24
+
+*** Before you use FITC, read the WARNING document first
+** Only for 1.5MB, 5MB DT and 5MB MB firmware SKUs

@@ -1,0 +1,10 @@
+Flash Image Tool: 4.1.0.1031
+Flash Programming Tool(DOS): 4.2.0.1017
+Flash Programming Tool(Windows): 4.2.0.1017
+FWUpdate(Local-DOS): 4.2.0.1017
+FWUpdate(Local-Win): 4.2.50.1053
+MEInfo(DOS): 4.1.0.1023
+MEInfo(Windows): 4.2.50.1053
+MEManuf(DOS): 4.1.0.1023
+MEManuf(Windows): 4.1.0.1023
+ITPMDiag(Windows): 4.1.0.1023

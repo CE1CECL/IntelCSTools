@@ -1,0 +1,25 @@
+Flash Image Tool (WIN32): 1.1.5.1162
+Flash Programming Tool (EFI32): 1.1.5.1162
+Flash Programming Tool (EFI64): 1.1.5.1162
+Flash Programming Tool (WIN32): 1.1.5.1162
+Flash Programming Tool (WIN64): 1.1.5.1162
+Flash Programming Tool (Android): 1.2.0.1149
+Flash Programming Tool (Linux): 1.1.4.1148
+FWUpdate (EFI32): 1.1.5.1162
+FWUpdate (EFI64): 1.1.5.1162
+FWUpdate (WIN32): 1.1.5.1162
+FWUpdate (WIN64): 1.1.5.1162
+FWUpdate (Android): 1.2.0.1149
+FWUpdate (Linux): 1.1.4.1148
+TXEInfo (EFI32): 1.1.5.1162
+TXEInfo (EFI64): 1.1.5.1162
+TXEInfo (WIN32): 1.1.5.1162
+TXEInfo (WIN64): 1.1.5.1162
+TXEInfo (Android): 1.2.0.1149
+TXEInfo (Linux): 1.1.4.1148
+TXEManuf (EFI32): 1.1.5.1162
+TXEManuf (EFI64): 1.1.5.1162
+TXEManuf (WIN32): 1.1.5.1162
+TXEManuf (WIN64): 1.1.5.1162
+TXEManuf (Android): 1.2.0.1149
+TXEManuf (Linux): 1.1.4.1148

@@ -1,0 +1,13 @@
+Flash Image Tool (WIN32): 1.7.3.1105
+Flash Programming Tool (DOS): 0.9.5
+Flash Programming Tool (WIN32): 0.9.5
+Fixed Address Programming Tool (DOS): 3.0.9
+Fixed Address Programming Tool (WIN32): 3.0.9
+FWUpdate (DOS): 3.2.2.1035
+FWUpdate (WIN32): 3.2.2.1035
+MEInfo (DOS): 3.0.0.1105
+MEInfo (WIN32): 3.0.0.1105
+MEManuf (DOS): 3.0.0.1105
+MEManuf (WIN32): 3.0.0.1105
+MENVM (WIN32): 3.0.0.1105
+IAMTNVM (WIN32): 3.0.0.1105

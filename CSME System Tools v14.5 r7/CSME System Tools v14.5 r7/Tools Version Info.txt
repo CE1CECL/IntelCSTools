@@ -1,0 +1,24 @@
+Flash Image Tool (WIN32): 14.5.25.1229
+Flash Image Tool (LINUX64): 14.5.25.1229
+Flash Programming Tool (EFI64): 14.5.25.1229
+Flash Programming Tool (WIN32): 14.5.25.1229
+Flash Programming Tool (WIN64): 14.5.25.1229
+Flash Programming Tool (LINUX64): 14.5.25.1229
+Flash Programming Tool (ANDROID64): 14.5.25.1229
+FWUpdate (EFI64): 14.5.25.1229
+FWUpdate (WIN32): 14.5.45.1771
+FWUpdate (WIN64): 14.5.45.1771
+FWUpdate (LINUX64): 14.5.25.1229
+FWUpdate (ANDROID64): 14.5.25.1229
+MEInfo (EFI64): 14.5.25.1229
+MEInfo (WIN32): 14.5.25.1229
+MEInfo (WIN64): 14.5.25.1229
+MEInfo (LINUX64): 14.5.25.1229
+MEInfo (ANDROID64): 14.5.25.1229
+MEManuf (EFI64): 14.5.25.1229
+MEManuf (WIN32): 14.5.25.1229
+MEManuf (WIN64): 14.5.25.1229
+MEManuf (LINUX64): 14.5.25.1229
+MEManuf (ANDROID64): 14.5.25.1229
+Manifest Extension Utility (WIN32): 14.5.25.1229
+Manifest Extension Utility (LINUX64): 14.5.25.1229

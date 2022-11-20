@@ -1,0 +1,28 @@
+Flash Image Tool: 8.1.40.1456 ***
+Flash Image Tool: 8.1.10.1286 ***
+Flash Programming Tool(DOS): 8.1.60.1561
+Flash Programming Tool(EFI): 8.1.60.1561
+Flash Programming Tool(Windows): 8.1.60.1561
+Flash Programming Tool(Windows64): 8.1.60.1561
+FWUpdate(Local-DOS): 8.1.72.3002
+FWUpdate(Local-EFI): 8.1.72.3002
+FWUpdate(Local-Win): 8.1.72.3002
+FWUpdate(Local-Win64): 8.1.72.3002
+FWUpdate(LINUX32): 8.1.71.3609
+FWUpdate(LINUX64): 8.1.71.3609
+MEInfo(DOS): 8.1.56.1541
+MEInfo(EFI): 8.1.56.1541
+MEInfo(Windows): 8.1.56.1541
+MEInfo(Windows64): 8.1.56.1541
+MEManuf(DOS): 8.1.56.1541
+MEManuf(EFI): 8.1.56.1541
+MEManuf(Windows): 8.1.56.1541
+MEManuf(Windows64): 8.1.56.1541
+IUSManufTool(DOS): 8.1.56.1541
+IUSManufTool(Windows): 8.1.56.1541
+UpdParam(DOS): 8.1.40.1456
+CCT(DOS): 8.1.40.1456
+CCT(EFI): 8.1.40.1456
+CCT(Windows): 8.1.20.1309
+
+*** Before you use FITC, read the WARNING document first

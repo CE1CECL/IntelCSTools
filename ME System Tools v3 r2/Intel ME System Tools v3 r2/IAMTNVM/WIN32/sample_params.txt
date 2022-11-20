@@ -1,0 +1,153 @@
+Manageability Mode = 1
+Manageability Mode Lock = 0
+Local Firmware Update Enabled = 0
+Local FWU Override Counter = 1
+Local FWU Override Qualifier = 0
+Flash Descriptor Override Pin-Strap Ignore = 0
+iQST Enabled = 1
+iQST Lock = 0
+Configuration Server Port = 
+Configuration Server Name = 
+Configuration Server IP = 
+AMT Host Name = 
+AMT Domain Name = 
+DHCP Enabled = 1
+AMT Ping Response Enabled = 1
+AMT Static IP Address = 0.0.0.0
+AMT Static IP Subnet Mask = 0.0.0.0
+AMT Static IP Default Gateway Address = 0.0.0.0
+AMT Static IP Primary DNS Address = 0.0.0.0
+AMT Static IP Secondary DNS Address = 0.0.0.0
+AMT Dedicated MAC Address = 00-ff-ff-ff-ff-ff
+VLAN = 0
+PET Language Code = 
+PET OEM Custom Fields 00-15 = 
+PET OEM Custom Fields 16-31 = 
+PET OEM Custom Fields 32-47 = 
+PET OEM Custom Fields 48-63 = 
+PET OEM Custom Fields Length = 
+PET Community String = public
+MEManuf Test Counter = 8
+IDER Boot Capable = 1
+SOL Boot Capable = 1
+BIOS Reflash Capable = 0
+Boot into BIOS Setup Capable = 0
+Pause during BIOS Boot Capable = 0
+HostIf SOL Enabled = 0
+HostIf IDER Enabled = 0
+Idle timeout - Manageability Engine = 1
+ME Visual LED Indicator Enabled = 0
+LAN Power Well = 2
+Power Package 1 Supported (Desktop: ON in S0) = 1
+Power Package 2 Supported (Desktop: ON in S0, S3) = 1
+Power Package 3 Supported (Desktop: ON in S0, S3, S4-5) = 1
+Power Package 4 Supported (Desktop: ON in S0, ME WoL in S3) = 1
+Power Package 5 Supported (Desktop: ON in S0, ME WoL in S3, S4-5) = 1
+Power Package 6 Supported (Desktop: ON in S0, S3, S4-5, OFF After Power Loss) = 1
+Power Package 7 Supported (Desktop: ON in S0, ME WoL in S3, S4-5, OFF After Power Loss) = 1
+Default Power Package = 1
+AMT Legacy Provisioning Mode Supported = 1
+AMT VLAN Local Configuration Blocked = 0
+iQST Supported = 1
+ASF Supported = 1
+AMT Supported = 1
+
+Provisioning Time Period = 24
+AMT Compatibility Mode = 0
+AMT Configuration Mode = 0
+Remote Configuration Enabled = 0
+PKI DNS Suffix = 
+Config Server FQDN = 
+
+Hash 0 Active = 1
+Hash 0 Friendly Name = VeriSign Class 3 Primary CA-G1
+Hash 0 Stream = 74 2C 31 92 E6 07 E4 24 EB 45 49 54 2B E1 BB C5 3E 61 74 E2 
+
+Hash 1 Active = 1
+Hash 1 Friendly Name = VeriSign Class 3 Primary CA-G3
+Hash 1 Stream = 13 2D 0D 45 53 4B 69 97 CD B2 D5 C3 39 E2 55 76 60 9B 5C C6 
+
+Hash 2 Active = 1
+Hash 2 Friendly Name = Go Daddy Class 2 CA
+Hash 2 Stream = 27 96 BA E6 3F 18 01 E2 77 26 1B A0 D7 77 70 02 8F 20 EE E4 
+
+Hash 3 Active = 1
+Hash 3 Friendly Name = Starfield Class 2 CA
+Hash 3 Stream = AD 7E 1C 28 B0 64 EF 8F 60 03 40 20 14 C3 D0 E3 37 0E B5 8A 
+
+Hash 4 Active = 0
+Hash 4 Friendly Name = 
+Hash 4 Stream = 
+
+Hash 5 Active = 0
+Hash 5 Friendly Name = 
+Hash 5 Stream = 
+
+Hash 6 Active = 0
+Hash 6 Friendly Name = 
+Hash 6 Stream = 
+
+Hash 7 Active = 0
+Hash 7 Friendly Name = 
+Hash 7 Stream = 
+
+Hash 8 Active = 0
+Hash 8 Friendly Name = 
+Hash 8 Stream = 
+
+Hash 9 Active = 0
+Hash 9 Friendly Name = 
+Hash 9 Stream = 
+
+Hash 10 Active = 0
+Hash 10 Friendly Name = 
+Hash 10 Stream = 
+
+Hash 11 Active = 0
+Hash 11 Friendly Name = 
+Hash 11 Stream = 
+
+Hash 12 Active = 0
+Hash 12 Friendly Name = 
+Hash 12 Stream = 
+
+Hash 13 Active = 0
+Hash 13 Friendly Name = 
+Hash 13 Stream = 
+
+Hash 14 Active = 0
+Hash 14 Friendly Name = 
+Hash 14 Stream = 
+
+Hash 15 Active = 0
+Hash 15 Friendly Name = 
+Hash 15 Stream = 
+
+Hash 16 Active = 0
+Hash 16 Friendly Name = 
+Hash 16 Stream = 
+
+Hash 17 Active = 0
+Hash 17 Friendly Name = 
+Hash 17 Stream = 
+
+Hash 18 Active = 0
+Hash 18 Friendly Name = 
+Hash 18 Stream = 
+
+Hash 19 Active = 0
+Hash 19 Friendly Name = 
+Hash 19 Stream = 
+
+Hash 20 Active = 0
+Hash 20 Friendly Name = 
+Hash 20 Stream = 
+
+Hash 21 Active = 0
+Hash 21 Friendly Name = 
+Hash 21 Stream = 
+
+Hash 22 Active = 0
+Hash 22 Friendly Name = 
+Hash 22 Stream = 
+
